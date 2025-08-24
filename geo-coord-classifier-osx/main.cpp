@@ -129,24 +129,6 @@ void runONNXDemo() {
         std::cout << "Accuracy: " << accuracy * 100.0 << "% (" << correct << "/"
                   << total << ")" << std::endl;
 
-        // Load test data
-
-        // A simple example of creating a tensor just to show the API is
-        // working.
-        const int64_t input_shape[] = {1, 2, 2, 3}; // Example tensor shape
-        float input_data[] = {1.0, 2.0, 3.0, 4.0,  5.0,  6.0,
-                              7.0, 8.0, 9.0, 10.0, 11.0, 12.0};
-        size_t input_data_length = 12;
-
-        Ort::MemoryInfo memoryInfo =
-            Ort::MemoryInfo::CreateCpu(OrtDeviceAllocator, OrtMemTypeCPU);
-
-        Ort::Value input_tensor = Ort::Value::CreateTensor<float>(
-            memoryInfo, input_data, input_data_length, input_shape, 4);
-
-        // Print success message
-        std::cout << "Successfully created a dummy ONNX tensor." << std::endl;
-
     } catch (const Ort::Exception &e) {
         std::cerr << "Error with ONNX Runtime: " << e.what() << std::endl;
     } catch (const std::exception &e) {
@@ -155,8 +137,6 @@ void runONNXDemo() {
 }
 
 int main(int argc, const char *argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
     runONNXDemo();
     return 0;
 }
