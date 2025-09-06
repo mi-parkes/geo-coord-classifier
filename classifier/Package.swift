@@ -2,7 +2,24 @@
 import PackageDescription
 import Foundation
 
-let onnxruntimePath = ProcessInfo.processInfo.environment["ONNXRUNTIME_HOME"]!
+
+// Check for the ONNXRUNTIME_HOME environment variable first.
+guard let baseOnnxruntimePath = ProcessInfo.processInfo.environment["ONNXRUNTIME_HOME"] else {
+    fatalError("ONNXRUNTIME_HOME environment variable is not set.")
+}
+
+let onnxruntimePath: String
+
+#if os(macOS)
+onnxruntimePath = "\(baseOnnxruntimePath)/osx"
+#elseif os(iOS)
+onnxruntimePath = "\(baseOnnxruntimePath)/ios"
+#elseif targetEnvironment(simulator)
+onnxruntimePath = "\(baseOnnxruntimePath)/simulator"
+#else
+fatalError("Unsupported platform.")
+#endif
+
 let includePath = onnxruntimePath + "/include"
 let libPath = onnxruntimePath + "/lib"
 
