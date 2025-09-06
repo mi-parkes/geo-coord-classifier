@@ -2,3 +2,7 @@
 DerivedData
 geo-coord-classifier.xcodeproj/xcuserdata
 geo-coord-classifier.xcodeproj/project.xcworkspace
+notes
+*.txt
+*.bak
+classifier/.swiftpm

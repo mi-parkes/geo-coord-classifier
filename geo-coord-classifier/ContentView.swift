@@ -6,8 +6,60 @@ let WelcomeText: String =
 
 struct ContentView: View {
     @State var gmsg: String = WelcomeText
-
     @State var verbose: Bool = false
+    @State private var showBackground = true
+
+    var body: some View {
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                // Top row of buttons
+                HStack {
+                    Button("Run test") {
+                        runTest()
+                    }
+                    .frame(maxWidth: .infinity)
+
+                    Button(action: {
+                        verbose.toggle()
+                        showBackground.toggle()
+                        gmsg = WelcomeText
+                    }) {
+                        Text(verbose ? "Verbose OFF" : "Verbose ON")
+                    }
+                    .frame(maxWidth: .infinity)
+
+                    Button("Clear") {
+                        gmsg = WelcomeText
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .padding()
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(12)
+
+                // Middle section: background image
+                if showBackground {
+                    Image("classify-city-gc")
+                        .resizable()
+                        .scaledToFit()  // ✅ show entire image
+                        .frame(maxWidth: geo.size.width)
+                        .padding(.vertical)
+                }
+
+                // Bottom section: scrollable text
+                ScrollView {
+                    VStack {
+                        Text(gmsg)
+                            .padding()
+                    }
+                }
+                .frame(
+                    maxHeight: showBackground
+                        ? geo.size.height * 0.1 : .infinity
+                )
+            }
+        }
+    }
 
     func mprinter(msg: String) {
         gmsg += "\n" + msg
@@ -32,40 +84,6 @@ struct ContentView: View {
             }
         } else {
             mprinter(msg: "Failure")
-        }
-    }
-
-    var body: some View {
-
-        Image(systemName: "globe")
-            .imageScale(.large)
-            .foregroundStyle(.tint)
-            .padding()
-        HStack {
-            Button("Run test") {
-                runTest()
-            }
-            .frame(maxWidth: .infinity)
-
-            Button(action: {
-                self.verbose.toggle()
-                gmsg = WelcomeText
-
-            }) {
-                Text(self.verbose ? "Verbose OFF" : "Verbose ON")
-                    .frame(maxWidth: .infinity)
-            }
-            .frame(maxWidth: .infinity)
-            Button("clear") {
-                gmsg = WelcomeText
-            }
-            .frame(maxWidth: .infinity)
-        }
-        ScrollView {
-            VStack {
-                Text(gmsg)
-            }
-            .padding()
         }
     }
 }
