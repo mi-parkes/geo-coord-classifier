@@ -7,16 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF9FB40C2E631BF6001D811F /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF9FB40B2E631BF6001D811F /* classifier */; };
-		BFFEEBCE2E63531A009F3762 /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BFFEEBCD2E63531A009F3762 /* classifier */; };
+		BF0811A62E6E17AE00A17EEE /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF0811A52E6E17AE00A17EEE /* classifier */; };
+		BFF5C86A2E6D4ED000702566 /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BFF5C8692E6D4ED000702566 /* classifier */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BFC063342E634E2900854926 /* CopyFiles */ = {
+		BF08119A2E6E177F00A17EEE /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0811AA2E6E17CA00A17EEE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF8DA9922E702B8E00DBF956 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -24,52 +43,96 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF9FB3F32E631933001D811F /* geo-coord-classifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geo-coord-classifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF9FB40D2E6325E8001D811F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BFC063362E634E2900854926 /* geo-coord-classifier-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "geo-coord-classifier-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFFEEBBD2E63516C009F3762 /* classifier */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = classifier; sourceTree = "<group>"; };
+		BF08119C2E6E177F00A17EEE /* geo-coord-classifier-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "geo-coord-classifier-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFF5C84F2E6D4E1B00702566 /* geo-coord-classifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geo-coord-classifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFF5C8652E6D4EA400702566 /* classifier */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = classifier; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		BFA070322E637BD300CC3D46 /* Exceptions for "geo-coord-classifier-cli" folder in "geo-coord-classifier" target */ = {
+		BF8DA9A22E70366100DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				ReadJSON.swift,
-				TestClassifier.swift,
+				libonnxruntime.1.23.0.dylib,
 			);
-			target = BF9FB3F22E631933001D811F /* geo-coord-classifier */;
+			target = BFF5C84E2E6D4E1B00702566 /* geo-coord-classifier */;
+		};
+		BF8DA9A62E7037B600DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier-cli" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				macosx/lib/libonnxruntime.1.23.0.dylib,
+			);
+			target = BF08119B2E6E177F00A17EEE /* geo-coord-classifier-cli */;
+		};
+		BFF5C8782E6D5BB600702566 /* Exceptions for "data" folder in "geo-coord-classifier" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"classify-city-gc.svg",
+				"classify-city-gc2.svg",
+				model.onnx,
+				test.json,
+			);
+			target = BFF5C84E2E6D4E1B00702566 /* geo-coord-classifier */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		BFFEEBF42E6359C9009F3762 /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */ = {
+		BF0811A92E6E17BF00A17EEE /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = BFC063342E634E2900854926 /* CopyFiles */;
+			buildPhase = BF08119A2E6E177F00A17EEE /* Copy Files */;
 			membershipExceptions = (
 				model.onnx,
 				test.json,
 			);
 		};
+		BF8DA9A02E70331C00DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				libonnxruntime.1.23.0.dylib = (CodeSignOnCopy, );
+			};
+			buildPhase = BF8DA9922E702B8E00DBF956 /* CopyFiles */;
+			membershipExceptions = (
+				libonnxruntime.1.23.0.dylib,
+			);
+		};
+		BF8DA9A42E70377200DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				macosx/lib/libonnxruntime.1.23.0.dylib = (CodeSignOnCopy, );
+			};
+			buildPhase = BF0811AA2E6E17CA00A17EEE /* CopyFiles */;
+			membershipExceptions = (
+				macosx/lib/libonnxruntime.1.23.0.dylib,
+			);
+		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BF9FB3F52E631933001D811F /* geo-coord-classifier */ = {
+		BF08119D2E6E177F00A17EEE /* geo-coord-classifier-cli */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "geo-coord-classifier-cli";
+			sourceTree = "<group>";
+		};
+		BF8DA8EF2E701C7A00DBF956 /* onnxruntime-release */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BF8DA9A22E70366100DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier" target */,
+				BF8DA9A02E70331C00DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier" target */,
+				BF8DA9A62E7037B600DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier-cli" target */,
+				BF8DA9A42E70377200DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */,
+			);
+			path = "onnxruntime-release";
+			sourceTree = "<group>";
+		};
+		BFF5C8512E6D4E1B00702566 /* geo-coord-classifier */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "geo-coord-classifier";
 			sourceTree = "<group>";
 		};
-		BFC063372E634E2900854926 /* geo-coord-classifier-cli */ = {
+		BFF5C86F2E6D5AC900702566 /* data */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				BFA070322E637BD300CC3D46 /* Exceptions for "geo-coord-classifier-cli" folder in "geo-coord-classifier" target */,
-			);
-			path = "geo-coord-classifier-cli";
-			sourceTree = "<group>";
-		};
-		BFFEEBF12E63599F009F3762 /* data */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				BFFEEBF42E6359C9009F3762 /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */,
+				BFF5C8782E6D5BB600702566 /* Exceptions for "data" folder in "geo-coord-classifier" target */,
+				BF0811A92E6E17BF00A17EEE /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -77,50 +140,50 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF9FB3F02E631933001D811F /* Frameworks */ = {
+		BF0811992E6E177F00A17EEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF9FB40C2E631BF6001D811F /* classifier in Frameworks */,
+				BF0811A62E6E17AE00A17EEE /* classifier in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFC063332E634E2900854926 /* Frameworks */ = {
+		BFF5C84C2E6D4E1B00702566 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFFEEBCE2E63531A009F3762 /* classifier in Frameworks */,
+				BFF5C86A2E6D4ED000702566 /* classifier in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF9FB3EA2E631933001D811F = {
+		BFF5C8462E6D4E1A00702566 = {
 			isa = PBXGroup;
 			children = (
-				BF9FB3F52E631933001D811F /* geo-coord-classifier */,
-				BFC063372E634E2900854926 /* geo-coord-classifier-cli */,
-				BF9FB4082E631AA7001D811F /* Frameworks */,
-				BFFEEBBD2E63516C009F3762 /* classifier */,
-				BF9FB3F42E631933001D811F /* Products */,
-				BFFEEBF12E63599F009F3762 /* data */,
+				BFF5C8512E6D4E1B00702566 /* geo-coord-classifier */,
+				BFF5C8652E6D4EA400702566 /* classifier */,
+				BF08119D2E6E177F00A17EEE /* geo-coord-classifier-cli */,
+				BFF5C8682E6D4ED000702566 /* Frameworks */,
+				BFF5C8502E6D4E1B00702566 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BF9FB3F42E631933001D811F /* Products */ = {
+		BFF5C8502E6D4E1B00702566 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF9FB3F32E631933001D811F /* geo-coord-classifier.app */,
-				BFC063362E634E2900854926 /* geo-coord-classifier-cli */,
+				BFF5C84F2E6D4E1B00702566 /* geo-coord-classifier.app */,
+				BF08119C2E6E177F00A17EEE /* geo-coord-classifier-cli */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF9FB4082E631AA7001D811F /* Frameworks */ = {
+		BFF5C8682E6D4ED000702566 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF9FB40D2E6325E8001D811F /* README.md */,
+				BFF5C86F2E6D5AC900702566 /* data */,
+				BF8DA8EF2E701C7A00DBF956 /* onnxruntime-release */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,96 +191,97 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF9FB3F22E631933001D811F /* geo-coord-classifier */ = {
+		BF08119B2E6E177F00A17EEE /* geo-coord-classifier-cli */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF9FB3FF2E631936001D811F /* Build configuration list for PBXNativeTarget "geo-coord-classifier" */;
+			buildConfigurationList = BF0811A22E6E177F00A17EEE /* Build configuration list for PBXNativeTarget "geo-coord-classifier-cli" */;
 			buildPhases = (
-				BF9FB3EF2E631933001D811F /* Sources */,
-				BF9FB3F02E631933001D811F /* Frameworks */,
-				BF9FB3F12E631933001D811F /* Resources */,
+				BF0811AA2E6E17CA00A17EEE /* CopyFiles */,
+				BF0811982E6E177F00A17EEE /* Sources */,
+				BF0811992E6E177F00A17EEE /* Frameworks */,
+				BF08119A2E6E177F00A17EEE /* Copy Files */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BF9FB4072E631A3B001D811F /* PBXTargetDependency */,
+				BF0811A42E6E17A300A17EEE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				BF9FB3F52E631933001D811F /* geo-coord-classifier */,
-				BFFEEBF12E63599F009F3762 /* data */,
-			);
-			name = "geo-coord-classifier";
-			packageProductDependencies = (
-				BF9FB40B2E631BF6001D811F /* classifier */,
-			);
-			productName = "geo-coord-classifier";
-			productReference = BF9FB3F32E631933001D811F /* geo-coord-classifier.app */;
-			productType = "com.apple.product-type.application";
-		};
-		BFC063352E634E2900854926 /* geo-coord-classifier-cli */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BFC0633A2E634E2900854926 /* Build configuration list for PBXNativeTarget "geo-coord-classifier-cli" */;
-			buildPhases = (
-				BFC063322E634E2900854926 /* Sources */,
-				BFC063332E634E2900854926 /* Frameworks */,
-				BFC063342E634E2900854926 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BFFEEBCC2E635314009F3762 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BFC063372E634E2900854926 /* geo-coord-classifier-cli */,
-				BFFEEBF12E63599F009F3762 /* data */,
+				BF08119D2E6E177F00A17EEE /* geo-coord-classifier-cli */,
 			);
 			name = "geo-coord-classifier-cli";
 			packageProductDependencies = (
-				BFFEEBCD2E63531A009F3762 /* classifier */,
+				BF0811A52E6E17AE00A17EEE /* classifier */,
 			);
 			productName = "geo-coord-classifier-cli";
-			productReference = BFC063362E634E2900854926 /* geo-coord-classifier-cli */;
+			productReference = BF08119C2E6E177F00A17EEE /* geo-coord-classifier-cli */;
 			productType = "com.apple.product-type.tool";
+		};
+		BFF5C84E2E6D4E1B00702566 /* geo-coord-classifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFF5C85B2E6D4E1C00702566 /* Build configuration list for PBXNativeTarget "geo-coord-classifier" */;
+			buildPhases = (
+				BF8DA98F2E70209500DBF956 /* ShellScript */,
+				BF8DA9922E702B8E00DBF956 /* CopyFiles */,
+				BFF5C84B2E6D4E1B00702566 /* Sources */,
+				BFF5C84C2E6D4E1B00702566 /* Frameworks */,
+				BFF5C84D2E6D4E1B00702566 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFF5C8672E6D4EC400702566 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BFF5C8512E6D4E1B00702566 /* geo-coord-classifier */,
+			);
+			name = "geo-coord-classifier";
+			packageProductDependencies = (
+				BFF5C8692E6D4ED000702566 /* classifier */,
+			);
+			productName = "geo-coord-classifier";
+			productReference = BFF5C84F2E6D4E1B00702566 /* geo-coord-classifier.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BF9FB3EB2E631933001D811F /* Project object */ = {
+		BFF5C8472E6D4E1A00702566 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					BF9FB3F22E631933001D811F = {
+					BF08119B2E6E177F00A17EEE = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					BFC063352E634E2900854926 = {
+					BFF5C84E2E6D4E1B00702566 = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = BF9FB3EE2E631933001D811F /* Build configuration list for PBXProject "geo-coord-classifier" */;
+			buildConfigurationList = BFF5C84A2E6D4E1A00702566 /* Build configuration list for PBXProject "geo-coord-classifier" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = BF9FB3EA2E631933001D811F;
+			mainGroup = BFF5C8462E6D4E1A00702566;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = BF9FB3F42E631933001D811F /* Products */;
+			productRefGroup = BFF5C8502E6D4E1B00702566 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF9FB3F22E631933001D811F /* geo-coord-classifier */,
-				BFC063352E634E2900854926 /* geo-coord-classifier-cli */,
+				BFF5C84E2E6D4E1B00702566 /* geo-coord-classifier */,
+				BF08119B2E6E177F00A17EEE /* geo-coord-classifier-cli */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF9FB3F12E631933001D811F /* Resources */ = {
+		BFF5C84D2E6D4E1B00702566 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,15 +290,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BF8DA98F2E70209500DBF956 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(LIB_ROOT)/libonnxruntime.dylib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\n\necho \"STEP1: Preparing Frameworks directory\"\n\nLIB_ROOT=\"${SRCROOT}/onnxruntime-release\"\nFRAMEWORKS_DIR=\"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\nmkdir -p \"${FRAMEWORKS_DIR}\"\n\nrm -fv ${LIB_ROOT}/*dylib\n\necho \"Copying ONNX Runtime dylibs for platform: ${PLATFORM_NAME}\"\n\ncase \"${PLATFORM_NAME}\" in\n  iphoneos)        SOURCE_DIR=\"${LIB_ROOT}/iphoneos/lib\" ;;\n  iphonesimulator) SOURCE_DIR=\"${LIB_ROOT}/iphonesimulator/lib\" ;;\n  macosx)          SOURCE_DIR=\"${LIB_ROOT}/macosx/lib\" ;;\n  *) echo \"Unsupported platform: ${PLATFORM_NAME}\" ; exit 1 ;;\nesac\n\necho \"STEP2: Copying dylibs\"\nfor dylib in \"${SOURCE_DIR}\"/libonnxruntime.1.23.0.dylib; do\n  echo \"Copying $dylib → ${LIB_ROOT}\"\n  cp -af \"$dylib\" \"${LIB_ROOT}/\"\ndone\n\necho \"STEP3: Done\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		BF9FB3EF2E631933001D811F /* Sources */ = {
+		BF0811982E6E177F00A17EEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFC063322E634E2900854926 /* Sources */ = {
+		BFF5C84B2E6D4E1B00702566 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,18 +330,54 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF9FB4072E631A3B001D811F /* PBXTargetDependency */ = {
+		BF0811A42E6E17A300A17EEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = BF9FB4062E631A3B001D811F /* classifier */;
+			productRef = BF0811A32E6E17A300A17EEE /* classifier */;
 		};
-		BFFEEBCC2E635314009F3762 /* PBXTargetDependency */ = {
+		BFF5C8672E6D4EC400702566 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = BFFEEBCB2E635314009F3762 /* classifier */;
+			productRef = BFF5C8662E6D4EC400702566 /* classifier */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		BF9FB3FD2E631936001D811F /* Debug */ = {
+		BF0811A02E6E177F00A17EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/onnxruntime-release/macosx/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BF0811A12E6E177F00A17EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/onnxruntime-release/macosx/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		BFF5C8592E6D4E1C00702566 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -308,17 +430,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		BF9FB3FE2E631936001D811F /* Release */ = {
+		BFF5C85A2E6D4E1C00702566 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -365,114 +485,128 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
-		BF9FB4002E631936001D811F /* Debug */ = {
+		BFF5C85C2E6D4E1C00702566 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "geo-coord-classifier/geo_coord_classifier.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"$(PROJECT_DIR)/onnxruntime-release",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "MP.geo-coord-classifier";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
-		BF9FB4012E631936001D811F /* Release */ = {
+		BFF5C85D2E6D4E1C00702566 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "geo-coord-classifier/geo_coord_classifier.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"$(PROJECT_DIR)/onnxruntime-release",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "MP.geo-coord-classifier";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		BFC0633B2E634E2900854926 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++23";
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_INTEROP_MODE = objcxx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		BFC0633C2E634E2900854926 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++23";
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_INTEROP_MODE = objcxx;
-				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF9FB3EE2E631933001D811F /* Build configuration list for PBXProject "geo-coord-classifier" */ = {
+		BF0811A22E6E177F00A17EEE /* Build configuration list for PBXNativeTarget "geo-coord-classifier-cli" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF9FB3FD2E631936001D811F /* Debug */,
-				BF9FB3FE2E631936001D811F /* Release */,
+				BF0811A02E6E177F00A17EEE /* Debug */,
+				BF0811A12E6E177F00A17EEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF9FB3FF2E631936001D811F /* Build configuration list for PBXNativeTarget "geo-coord-classifier" */ = {
+		BFF5C84A2E6D4E1A00702566 /* Build configuration list for PBXProject "geo-coord-classifier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF9FB4002E631936001D811F /* Debug */,
-				BF9FB4012E631936001D811F /* Release */,
+				BFF5C8592E6D4E1C00702566 /* Debug */,
+				BFF5C85A2E6D4E1C00702566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFC0633A2E634E2900854926 /* Build configuration list for PBXNativeTarget "geo-coord-classifier-cli" */ = {
+		BFF5C85B2E6D4E1C00702566 /* Build configuration list for PBXNativeTarget "geo-coord-classifier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFC0633B2E634E2900854926 /* Debug */,
-				BFC0633C2E634E2900854926 /* Release */,
+				BFF5C85C2E6D4E1C00702566 /* Debug */,
+				BFF5C85D2E6D4E1C00702566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -480,23 +614,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BF9FB4062E631A3B001D811F /* classifier */ = {
+		BF0811A32E6E17A300A17EEE /* classifier */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = classifier;
 		};
-		BF9FB40B2E631BF6001D811F /* classifier */ = {
+		BF0811A52E6E17AE00A17EEE /* classifier */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = classifier;
 		};
-		BFFEEBCB2E635314009F3762 /* classifier */ = {
+		BFF5C8662E6D4EC400702566 /* classifier */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = classifier;
 		};
-		BFFEEBCD2E63531A009F3762 /* classifier */ = {
+		BFF5C8692E6D4ED000702566 /* classifier */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = classifier;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = BF9FB3EB2E631933001D811F /* Project object */;
+	rootObject = BFF5C8472E6D4E1A00702566 /* Project object */;
 }

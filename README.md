@@ -1,73 +1,83 @@
 # Geo Coordinate Classifier
 
-This project is a [Swift-based](https://en.wikipedia.org/wiki/Swift_(programming_language)) application for classifying geographical coordinates using a C++ classifier library that runs a pre-trained [machine learning](https://en.wikipedia.org/wiki/Neural_network_(machine_learning)) model. 
-Developed for ``macOS``, it demonstrates running an [ONNX](https://en.wikipedia.org/wiki/Open_Neural_Network_Exchange) model in a native Swift environment with a C++ backend.
+This project is a [Swift-based](https://en.wikipedia.org/wiki/Swift_(programming_language)) application for classifying geographical coordinates using a C++ classifier library that runs a pre-trained [machine learning](https://en.wikipedia.org/wiki/Neural_network_(machine_learning)) model. Developed for multi-platform support, it demonstrates running an [ONNX](https://en.wikipedia.org/wiki/Open_Neural_Network_Exchange) model in a native Swift environment with a C++ backend.
 
-![](data/classify-city-gc2.svg)
+![](data/classify-city-gc3.svg)
 
------
+---
 
 ### Model Details
 
-The model used by this application was initially created with [**PyTorch**](https://en.wikipedia.org/wiki/PyTorch), **quantized** to 8-bits for efficiency, and then converted to the **ONNX** (Open Neural Network Exchange) format. This process allows the model to be deployed and run on a variety of platforms and frameworks, including ``ONNX Runtime``.
+The model used by this application was initially created with **PyTorch**, **quantized** to 8-bits for efficiency, and then converted to the **ONNX** (Open Neural Network Exchange) format. This process allows the model to be deployed and run on a variety of platforms and frameworks, including **ONNX Runtime**.
 
 ![](data/classify-city-gc.svg)
------
+
+---
 
 ### Features
 
-  * **Offline inference:** Runs the ONNX model without needing a network connection.
-  * **High performance:** Utilizes the ONNX Runtime C++ API for efficient model execution.
-  * **Portable deployment:** Validates the model's functionality in a native environment, a crucial step for target deployment scenarios.
-  * **Platform Support:** Supports building as a Swift-based App or a command-line interface (CLI).
+* **Offline inference:** Runs the ONNX model without needing a network connection.
+* **High performance:** Utilizes the ONNX Runtime C++ API for efficient model execution.
+* **Portable deployment:** Validates the model's functionality in a native environment, a crucial step for target deployment scenarios.
+* **Platform Support:** Supports building as a Swift-based App for **macOSX**, **iOS**, and **iOS Simulator**, and as a command-line interface (CLI) for **macOSX**.
 
------
+---
 
 ### Dependencies
 
-  * **ONNX Runtime:** The core library required for loading and running the ONNX model.
-  * **Data Files:** This application requires data files to be present in the build directory.
+* **ONNX Runtime:** The core library required for loading and running the ONNX model.
+* **Data Files:** This application requires data files to be present in the build directory.
 
------
+**Note:** The project has a hardcoded dependency on `libonnxruntime.1.23.0.dylib`. To use a different version, you'll need to modify the Build Phase configurations.
+
+---
 
 ### Building the Project
 
-This project supports building a Swift-based App or CLI from the command line using `xcodebuild`. Ensure you have the ONNX Runtime library downloaded and the `ONNXRUNTIME_HOME` environment variable set to the root directory of your ONNX Runtime installation.
+This project supports building a Swift-based App or CLI from the command line using `xcodebuild`. The project expects the **`onnxruntime-release`** directory to be located at the same level as your project directory and contain the following structure:
 
-#### Building App 📲
+```txt
+onnxruntime-release
+├── iphoneos
+│   ├── include
+│   └── lib
+├── iphonesimulator
+│   ├── include
+│   └── lib
+└── macosx
+├── bin
+├── include
+└── lib
+````
+
+#### Building from Command Line 🛠️
 
 ```bash
-export ONNXRUNTIME_HOME=/path/to/onnxruntime
-xcodebuild -project geo-coord-classifier.xcodeproj \
-    -scheme geo-coord-classifier \
-    -configuration Debug \
-    "ARCHS=arm64"
-```
+# Build App for macOSX
+make build-macosx
 
-#### Building CLI 💻
+# Build CLI for macOSX
+make build-cli-macosx
 
-```bash
-export ONNXRUNTIME_HOME=/path/to/onnxruntime
-xcodebuild -project geo-coord-classifier.xcodeproj \
-    -scheme geo-coord-classifier-cli \
-    -configuration Debug \
-    "ARCHS=arm64"
-```
+# Build App for iOS Simulator
+make build-ios-iphonesimulator
+
+# Build App for iOS Device
+make build-iphoneos
+````
 
 -----
 
 ### Running the Project
 
-#### Run App 🚀
+#### Run App (macOSX) 🚀
 
 ```bash
-open DerivedData/geo-coord-classifier/Build/Products/Debug/geo-coord-classifier.app
+make run-macosx
 ```
 
-#### Run CLI 🏃
+#### Run CLI (macOSX) 🏃
 
 ```bash
-export ONNXRUNTIME_HOME=/path/to/onnxruntime
-cd DerivedData/geo-coord-classifier/Build/Products/Debug/
-./geo-coord-classifier-cli
+make run-cli-macosx
 ```
