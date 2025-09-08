@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF9FB3F22E631933001D811F"
+               BlueprintIdentifier = "BFF5C84E2E6D4E1B00702566"
                BuildableName = "geo-coord-classifier.app"
                BlueprintName = "geo-coord-classifier"
                ReferencedContainer = "container:geo-coord-classifier.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF9FB3F22E631933001D811F"
+            BlueprintIdentifier = "BFF5C84E2E6D4E1B00702566"
             BuildableName = "geo-coord-classifier.app"
             BlueprintName = "geo-coord-classifier"
             ReferencedContainer = "container:geo-coord-classifier.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF9FB3F22E631933001D811F"
+            BlueprintIdentifier = "BFF5C84E2E6D4E1B00702566"
             BuildableName = "geo-coord-classifier.app"
             BlueprintName = "geo-coord-classifier"
             ReferencedContainer = "container:geo-coord-classifier.xcodeproj">

@@ -1,35 +1,20 @@
+import Foundation
 // swift-tools-version: 6.1
 import PackageDescription
-import Foundation
 
-
-// Check for the ONNXRUNTIME_HOME environment variable first.
-guard let baseOnnxruntimePath = ProcessInfo.processInfo.environment["ONNXRUNTIME_HOME"] else {
-    fatalError("ONNXRUNTIME_HOME environment variable is not set.")
-}
-
-let onnxruntimePath: String
-
-#if os(macOS)
-onnxruntimePath = "\(baseOnnxruntimePath)/osx"
-#elseif os(iOS)
-onnxruntimePath = "\(baseOnnxruntimePath)/ios"
-#elseif targetEnvironment(simulator)
-onnxruntimePath = "\(baseOnnxruntimePath)/simulator"
-#else
-fatalError("Unsupported platform.")
-#endif
-
-let includePath = onnxruntimePath + "/include"
-let libPath = onnxruntimePath + "/lib"
+let baseOnnxruntimePath = "../onnxruntime-release"
 
 let package = Package(
     name: "classifier",
+    platforms: [
+        .macOS(.v13),
+        .iOS(.v16),
+    ],
     products: [
         .library(
             name: "classifier",
             targets: ["classifier"]
-        ),
+        )
     ],
     targets: [
         .target(
@@ -38,10 +23,14 @@ let package = Package(
             sources: ["Classifier.cpp"],
             cxxSettings: [
                 .headerSearchPath("include"),
-                .unsafeFlags(["-I\(includePath)"])
-            ],
-            linkerSettings: [
-                .unsafeFlags(["-L\(libPath)", "-lonnxruntime", "-rpath", "\(libPath)"])
+                .unsafeFlags(
+                    ["-I\(baseOnnxruntimePath)/macosx/include"],
+                    .when(platforms: [.macOS])
+                ),
+                .unsafeFlags(
+                    ["-I\(baseOnnxruntimePath)/iphoneos/include"],
+                    .when(platforms: [.iOS])
+                ),
             ]
         )
     ]
