@@ -7,3 +7,4 @@ notes
 *.bak
 classifier/.swiftpm
 onnxruntime-release
+onnxruntime.xcframework

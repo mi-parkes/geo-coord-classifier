@@ -34,20 +34,23 @@ The model used by this application was initially created with **PyTorch**, **qua
 
 ### Building the Project
 
-This project supports building a Swift-based App or CLI from the command line using `xcodebuild`. The project expects the **`onnxruntime-release`** directory to be located at the same level as your project directory and contain the following structure:
+This project supports building a Swift-based App or CLI from the command line using `xcodebuild`. The project expects the **`onnxruntime.xcframework`** directory to be located in the root directory of this project and contain the following structure:
 
 ```txt
-onnxruntime-release
-├── iphoneos
-│   ├── include
-│   └── lib
-├── iphonesimulator
-│   ├── include
-│   └── lib
-└── macosx
-├── bin
-├── include
-└── lib
+/geo-coord-classifier
+├── ...
+├── geo-coord-classifier
+├── geo-coord-classifier-cli
+├── geo-coord-classifier.xcodeproj
+├── ...
+├── onnxruntime.xcframework
+│   ├── ios-arm64
+│   │   ├── onnxruntime.framework
+│   │   └── ...
+│   └── macos-x86_64
+│       ├── onnxruntime.framework
+│       └── ...
+└── ...
 ````
 
 #### Building from Command Line 🛠️

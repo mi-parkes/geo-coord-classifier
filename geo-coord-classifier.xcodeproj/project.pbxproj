@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BF0811A62E6E17AE00A17EEE /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF0811A52E6E17AE00A17EEE /* classifier */; };
+		BFD87FFB2E71C8910071BEA8 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; };
+		BFD87FFE2E71C91A0071BEA8 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; };
+		BFD880002E71C9E80071BEA8 /* onnxruntime.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFF5C86A2E6D4ED000702566 /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BFF5C8692E6D4ED000702566 /* classifier */; };
 /* End PBXBuildFile section */
 
@@ -22,21 +25,13 @@
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF0811AA2E6E17CA00A17EEE /* CopyFiles */ = {
+		BFD87FFF2E71C9D80071BEA8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 7;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF8DA9922E702B8E00DBF956 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
+				BFD880002E71C9E80071BEA8 /* onnxruntime.xcframework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,25 +39,12 @@
 
 /* Begin PBXFileReference section */
 		BF08119C2E6E177F00A17EEE /* geo-coord-classifier-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "geo-coord-classifier-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = onnxruntime.xcframework; sourceTree = "<group>"; };
 		BFF5C84F2E6D4E1B00702566 /* geo-coord-classifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geo-coord-classifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF5C8652E6D4EA400702566 /* classifier */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = classifier; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		BF8DA9A22E70366100DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				libonnxruntime.1.23.0.dylib,
-			);
-			target = BFF5C84E2E6D4E1B00702566 /* geo-coord-classifier */;
-		};
-		BF8DA9A62E7037B600DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier-cli" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				macosx/lib/libonnxruntime.1.23.0.dylib,
-			);
-			target = BF08119B2E6E177F00A17EEE /* geo-coord-classifier-cli */;
-		};
 		BFF5C8782E6D5BB600702566 /* Exceptions for "data" folder in "geo-coord-classifier" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -84,43 +66,12 @@
 				test.json,
 			);
 		};
-		BF8DA9A02E70331C00DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			attributesByRelativePath = {
-				libonnxruntime.1.23.0.dylib = (CodeSignOnCopy, );
-			};
-			buildPhase = BF8DA9922E702B8E00DBF956 /* CopyFiles */;
-			membershipExceptions = (
-				libonnxruntime.1.23.0.dylib,
-			);
-		};
-		BF8DA9A42E70377200DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			attributesByRelativePath = {
-				macosx/lib/libonnxruntime.1.23.0.dylib = (CodeSignOnCopy, );
-			};
-			buildPhase = BF0811AA2E6E17CA00A17EEE /* CopyFiles */;
-			membershipExceptions = (
-				macosx/lib/libonnxruntime.1.23.0.dylib,
-			);
-		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BF08119D2E6E177F00A17EEE /* geo-coord-classifier-cli */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "geo-coord-classifier-cli";
-			sourceTree = "<group>";
-		};
-		BF8DA8EF2E701C7A00DBF956 /* onnxruntime-release */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				BF8DA9A22E70366100DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier" target */,
-				BF8DA9A02E70331C00DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier" target */,
-				BF8DA9A62E7037B600DBF956 /* Exceptions for "onnxruntime-release" folder in "geo-coord-classifier-cli" target */,
-				BF8DA9A42E70377200DBF956 /* Exceptions for "onnxruntime-release" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */,
-			);
-			path = "onnxruntime-release";
 			sourceTree = "<group>";
 		};
 		BFF5C8512E6D4E1B00702566 /* geo-coord-classifier */ = {
@@ -145,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0811A62E6E17AE00A17EEE /* classifier in Frameworks */,
+				BFD87FFB2E71C8910071BEA8 /* onnxruntime.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD87FFE2E71C91A0071BEA8 /* onnxruntime.xcframework in Frameworks */,
 				BFF5C86A2E6D4ED000702566 /* classifier in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				BFF5C86F2E6D5AC900702566 /* data */,
-				BF8DA8EF2E701C7A00DBF956 /* onnxruntime-release */,
+				BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,8 +148,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF0811A22E6E177F00A17EEE /* Build configuration list for PBXNativeTarget "geo-coord-classifier-cli" */;
 			buildPhases = (
-				BF0811AA2E6E17CA00A17EEE /* CopyFiles */,
 				BF0811982E6E177F00A17EEE /* Sources */,
+				BF5346DB2E71CBB00010D446 /* ShellScript */,
 				BF0811992E6E177F00A17EEE /* Frameworks */,
 				BF08119A2E6E177F00A17EEE /* Copy Files */,
 			);
@@ -220,11 +173,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFF5C85B2E6D4E1C00702566 /* Build configuration list for PBXNativeTarget "geo-coord-classifier" */;
 			buildPhases = (
-				BF8DA98F2E70209500DBF956 /* ShellScript */,
-				BF8DA9922E702B8E00DBF956 /* CopyFiles */,
 				BFF5C84B2E6D4E1B00702566 /* Sources */,
 				BFF5C84C2E6D4E1B00702566 /* Frameworks */,
 				BFF5C84D2E6D4E1B00702566 /* Resources */,
+				BFD87FFF2E71C9D80071BEA8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -291,7 +243,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BF8DA98F2E70209500DBF956 /* ShellScript */ = {
+		BF5346DB2E71CBB00010D446 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -304,11 +256,10 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(LIB_ROOT)/libonnxruntime.dylib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -euo pipefail\n\necho \"STEP1: Preparing Frameworks directory\"\n\nLIB_ROOT=\"${SRCROOT}/onnxruntime-release\"\nFRAMEWORKS_DIR=\"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\nmkdir -p \"${FRAMEWORKS_DIR}\"\n\nrm -fv ${LIB_ROOT}/*dylib\n\necho \"Copying ONNX Runtime dylibs for platform: ${PLATFORM_NAME}\"\n\ncase \"${PLATFORM_NAME}\" in\n  iphoneos)        SOURCE_DIR=\"${LIB_ROOT}/iphoneos/lib\" ;;\n  iphonesimulator) SOURCE_DIR=\"${LIB_ROOT}/iphonesimulator/lib\" ;;\n  macosx)          SOURCE_DIR=\"${LIB_ROOT}/macosx/lib\" ;;\n  *) echo \"Unsupported platform: ${PLATFORM_NAME}\" ; exit 1 ;;\nesac\n\necho \"STEP2: Copying dylibs\"\nfor dylib in \"${SOURCE_DIR}\"/libonnxruntime.1.23.0.dylib; do\n  echo \"Copying $dylib → ${LIB_ROOT}\"\n  cp -af \"$dylib\" \"${LIB_ROOT}/\"\ndone\n\necho \"STEP3: Done\"\n";
+			shellScript = "# Get the path to the dylib using a glob pattern to be version-agnostic\nDYLIB_FILE=$(find \"${BUILT_PRODUCTS_DIR}\" -name \"libonnxruntime.*.dylib\" | head -n 1)\n\n# Check if the dylib exists\nif [ -z \"$DYLIB_FILE\" ]; then\n    echo \"Error: onnxruntime dylib not found in build directory.\"\n    exit 1\nfi\n\n# Get the code signing identity from the build settings. This is the most reliable method\n# as it uses the same identity Xcode is using to sign your app.\nif [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" ]; then\n    SIGNING_IDENTITY=\"${EXPANDED_CODE_SIGN_IDENTITY}\"\nelse\n    # Fallback: Find the first valid \"Apple Development\" identity\n    SIGNING_IDENTITY=$(security find-identity -p codesigning -v | grep \"Apple Development:\" | head -n 1 | sed 's/.*\"\\(.*\\)\".*/\\1/')\nfi\n\nif [ -z \"${SIGNING_IDENTITY}\" ]; then\n    echo \"Error: No suitable Apple Development signing identity found.\"\n    exit 1\nfi\n\necho \"Re-signing onnxruntime dylib with identity: ${SIGNING_IDENTITY}\"\ncodesign --force --sign \"${SIGNING_IDENTITY}\" \"$DYLIB_FILE\"\necho \"Successfully re-signed onnxruntime dylib.\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -347,6 +298,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWRU5YDXZ6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/onnxruntime-release/macosx/lib",
@@ -365,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWRU5YDXZ6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/onnxruntime-release/macosx/lib",
