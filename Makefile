@@ -14,7 +14,7 @@ $(MAKE_VERBOSE).SILENT:
 clean:
 	rm -rf DerivedData
 	rm -rf geo-coord-classifier.xcodeproj/xcuserdata
-	rm -rf geo-coord-classifier.xcodeproj/project.xcworkspace
+	rm -rf geo-coord-classifier.xcodeproj/project.xcworkspace/xcuserdata
 	rm -rf classifier/.swiftpm
 
 build-macosx: clean
