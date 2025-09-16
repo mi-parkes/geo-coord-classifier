@@ -11,6 +11,16 @@ BUILD_CONFIGURATION = Debug
 $(MAKE_VERBOSE).SILENT:
 	echo NothingAtAll
 
+help:
+	echo $(MAKE) help
+	echo $(MAKE) clean
+	echo $(MAKE) build-macosx
+	echo $(MAKE) run-macosx
+	echo $(MAKE) build-cli-macosx
+	echo $(MAKE) run-cli-macosx
+	echo $(MAKE) build-ios-iphonesimulator
+	echo $(MAKE) build-iphoneos
+
 clean:
 	rm -rf DerivedData
 	rm -rf geo-coord-classifier.xcodeproj/xcuserdata

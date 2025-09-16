@@ -1,9 +1,7 @@
 import Foundation
 import classifier
 
-var hw: Classifier = Classifier()
-
-func getFilePath(filename: String, ext: String) -> URL? {
+func getFileUrl(filename: String, ext: String) -> URL? {
     if let fileURL = Bundle.main.url(
         forResource: filename,
         withExtension: ext
@@ -17,17 +15,19 @@ func getFilePath(filename: String, ext: String) -> URL? {
 class TestClassifier {
     public typealias Printer = (String) -> Void
 
+    let geoClassifier: ClassifierProtocol
     var printer: Printer
-    let modelPath: String
+    let modelURL: URL
     let testURL: URL
     let verbose: Bool
 
     var total: Int = 0
     var correct: Int = 0
 
-    init(printer:  @escaping Printer, modelPath:String, testURL:URL, verbose: Bool = false) {
+    init(geoClassifier:ClassifierProtocol, printer:  @escaping Printer, modelURL:URL, testURL:URL, verbose: Bool = false) {
+        self.geoClassifier = geoClassifier
         self.printer = printer
-        self.modelPath = modelPath
+        self.modelURL = modelURL
         self.testURL = testURL
         self.verbose = verbose
     }
@@ -44,7 +44,7 @@ class TestClassifier {
                     var res: String = "--"
                     let latitude: Float = Float(coordinatePair[0])
                     let longitude: Float = Float(coordinatePair[1])
-                    let myInt = hw.infer(latitude, longitude)
+                    let myInt = geoClassifier.infer(v1:latitude, v2:longitude)
                     total += 1
                     if let foundCity = findCityName(
                         forLabel: Int(myInt),
@@ -77,7 +77,7 @@ class TestClassifier {
     }
         
     public func runTest() -> Bool {
-        if hw.minit(modelPath,verbose) == 1 {
+        if geoClassifier.minit(modelURL:modelURL,verbose:verbose) == 1 {
             if let myGeoData = loadGeoData(testURL) {
                 for (cityName, cityData) in myGeoData.sorted(by: {
                     $0.value.label < $1.value.label
@@ -90,7 +90,7 @@ class TestClassifier {
                     processCoordinates(for: cityName, in: myGeoData)
                 }
                 let accuracy = Double(correct) / Double(total)
-                printer(String(format: "Accuracy: %.2f%% (%d/%d)", accuracy * 100.0, correct, total))
+                printer(String(format: "Accuracy (%@): %.2f%% (%d/%d)", geoClassifier.getName(),accuracy * 100.0, correct, total))
             }
         }
         
