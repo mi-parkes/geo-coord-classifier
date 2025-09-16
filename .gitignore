@@ -8,3 +8,5 @@ notes
 classifier/.swiftpm
 onnxruntime-release
 onnxruntime.xcframework
+GeneratedSources
+Resources

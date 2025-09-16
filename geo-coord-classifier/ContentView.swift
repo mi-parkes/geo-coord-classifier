@@ -88,7 +88,7 @@ struct ContentView: View {
             .padding()
             .background(Color.white.opacity(0.8))
             .cornerRadius(12)
-            
+
             // Middle section: background image
             if showBackground {
                 Image("classify-city-gc")
@@ -96,7 +96,7 @@ struct ContentView: View {
                     .scaledToFit()
                     .padding(.vertical)
             }
-            
+
             // Bottom section: scrollable text
             ScrollView {
                 Text(gmsg)
@@ -108,30 +108,45 @@ struct ContentView: View {
         #endif
     }
     
-    // MARK: - Helper Functions
     func mprinter(msg: String) {
         gmsg += "\n" + msg
     }
-    
+
     func runTest() {
-        let modelURL = getFilePath(filename: "model", ext: "onnx")
-        let testURL = getFilePath(filename: "test", ext: "json")
-        
-        if let modelURL = modelURL, let testURL = testURL {
+        var classifier: ClassifierProtocol
+
+        classifier = CppClassifierWrapper()
+
+        let testURL = getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
+        var modelURL = getFileUrl(filename: "GeoClassifier", ext: "onnx")
+        if let testURL = testURL, let modelURL = modelURL {
             let tc: TestClassifier = TestClassifier(
+                geoClassifier:classifier,
                 printer: mprinter,
-                modelPath: modelURL.path,
-                testURL: testURL,
-                verbose: verbose
+                modelURL: modelURL,
+                testURL:testURL,
+                verbose:verbose
             )
-            
             tc.reset()
-            
             if !tc.runTest() {
                 mprinter(msg: "Check your setup")
             }
-        } else {
-            mprinter(msg: "Failure")
+        }
+
+        classifier = SwiftClassifier()
+        modelURL = getFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
+        if let testURL = testURL, let modelURL = modelURL  {
+            let tc: TestClassifier = TestClassifier(
+                geoClassifier:classifier,
+                printer: mprinter,
+                modelURL: modelURL,
+                testURL:testURL,
+                verbose:verbose
+            )
+            tc.reset()
+            if !tc.runTest() {
+                mprinter(msg: "Check your setup")
+            }
         }
     }
 }

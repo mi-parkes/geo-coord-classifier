@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BF0811A62E6E17AE00A17EEE /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF0811A52E6E17AE00A17EEE /* classifier */; };
+		BF22246A2E797714006371B7 /* GeoClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2224692E797714006371B7 /* GeoClassifier.swift */; };
+		BF22246B2E797752006371B7 /* GeoClassifier.mlmodelc in Copy Files */ = {isa = PBXBuildFile; fileRef = BF2224672E7972D7006371B7 /* GeoClassifier.mlmodelc */; };
+		BF22246D2E797850006371B7 /* GeoClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2224692E797714006371B7 /* GeoClassifier.swift */; };
+		BF22246E2E79785B006371B7 /* GeoClassifier.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = BF2224672E7972D7006371B7 /* GeoClassifier.mlmodelc */; };
 		BFD87FFB2E71C8910071BEA8 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; };
 		BFD87FFE2E71C91A0071BEA8 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; };
 		BFD880002E71C9E80071BEA8 /* onnxruntime.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -21,6 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				BF22246B2E797752006371B7 /* GeoClassifier.mlmodelc in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,31 +44,44 @@
 
 /* Begin PBXFileReference section */
 		BF08119C2E6E177F00A17EEE /* geo-coord-classifier-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "geo-coord-classifier-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2224672E7972D7006371B7 /* GeoClassifier.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GeoClassifier.mlmodelc; path = Resources/GeoClassifier.mlmodelc; sourceTree = "<group>"; };
+		BF2224692E797714006371B7 /* GeoClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeoClassifier.swift; path = GeneratedSources/GeoClassifier.swift; sourceTree = "<group>"; };
 		BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = onnxruntime.xcframework; sourceTree = "<group>"; };
 		BFF5C84F2E6D4E1B00702566 /* geo-coord-classifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geo-coord-classifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF5C8652E6D4EA400702566 /* classifier */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = classifier; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BF2223F52E786730006371B7 /* Exceptions for "geo-coord-classifier-cli" folder in "geo-coord-classifier" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ClassifierProtocol.swift,
+				CppClassifierWrapper.swift,
+				ReadJSON.swift,
+				SwiftClassifier.swift,
+				TestClassifier.swift,
+			);
+			target = BFF5C84E2E6D4E1B00702566 /* geo-coord-classifier */;
+		};
 		BFF5C8782E6D5BB600702566 /* Exceptions for "data" folder in "geo-coord-classifier" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"classify-city-gc.svg",
 				"classify-city-gc2.svg",
-				model.onnx,
-				test.json,
+				GeoClassifier.onnx,
+				GeoClassifierEvaluationData.json,
 			);
 			target = BFF5C84E2E6D4E1B00702566 /* geo-coord-classifier */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		BF0811A92E6E17BF00A17EEE /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */ = {
+		BF2224E42E79C4E0006371B7 /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = BF08119A2E6E177F00A17EEE /* Copy Files */;
 			membershipExceptions = (
-				model.onnx,
-				test.json,
+				GeoClassifier.onnx,
+				GeoClassifierEvaluationData.json,
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
@@ -71,6 +89,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BF08119D2E6E177F00A17EEE /* geo-coord-classifier-cli */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BF2223F52E786730006371B7 /* Exceptions for "geo-coord-classifier-cli" folder in "geo-coord-classifier" target */,
+			);
 			path = "geo-coord-classifier-cli";
 			sourceTree = "<group>";
 		};
@@ -83,7 +104,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				BFF5C8782E6D5BB600702566 /* Exceptions for "data" folder in "geo-coord-classifier" target */,
-				BF0811A92E6E17BF00A17EEE /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */,
+				BF2224E42E79C4E0006371B7 /* Exceptions for "data" folder in "Copy Files" phase from "geo-coord-classifier-cli" target */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -115,6 +136,8 @@
 		BFF5C8462E6D4E1A00702566 = {
 			isa = PBXGroup;
 			children = (
+				BF2224692E797714006371B7 /* GeoClassifier.swift */,
+				BF2224672E7972D7006371B7 /* GeoClassifier.mlmodelc */,
 				BFF5C8512E6D4E1B00702566 /* geo-coord-classifier */,
 				BFF5C8652E6D4EA400702566 /* classifier */,
 				BF08119D2E6E177F00A17EEE /* geo-coord-classifier-cli */,
@@ -148,6 +171,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF0811A22E6E177F00A17EEE /* Build configuration list for PBXNativeTarget "geo-coord-classifier-cli" */;
 			buildPhases = (
+				BF2224662E79715E006371B7 /* ShellScript */,
 				BF0811982E6E177F00A17EEE /* Sources */,
 				BF5346DB2E71CBB00010D446 /* ShellScript */,
 				BF0811992E6E177F00A17EEE /* Frameworks */,
@@ -173,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFF5C85B2E6D4E1C00702566 /* Build configuration list for PBXNativeTarget "geo-coord-classifier" */;
 			buildPhases = (
+				BF22246C2E7977F8006371B7 /* ShellScript */,
 				BFF5C84B2E6D4E1B00702566 /* Sources */,
 				BFF5C84C2E6D4E1B00702566 /* Frameworks */,
 				BFF5C84D2E6D4E1B00702566 /* Resources */,
@@ -237,12 +262,49 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF22246E2E79785B006371B7 /* GeoClassifier.mlmodelc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BF2224662E79715E006371B7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${SRCROOT}/Resources/${MODEL_NAME}.mlmodelc",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\nMODEL_NAME=\"GeoClassifier\"\nSRC_MLMODEL=\"${SRCROOT}/data/${MODEL_NAME}.mlpackage\"\n\n# Directory to store the compiled model (.mlmodelc) for the app bundle\nDST_MLMODELC_DIR=\"${SRCROOT}/Resources/\"\n\n# Directory to store the generated Swift class file\nDST_SWIFT_DIR=\"${SRCROOT}/GeneratedSources/\"\n\n# Create the output directories if they don't exist\nmkdir -p \"$DST_MLMODELC_DIR\"\nmkdir -p \"$DST_SWIFT_DIR\"\n\n# 1. Compile the .mlpackage to .mlmodelc for the app bundle\nxcrun coremlcompiler compile \"$SRC_MLMODEL\" \"$DST_MLMODELC_DIR\"\n\n# 2. Generate the Swift class file from the .mlpackage\nxcrun coremlcompiler generate \"$SRC_MLMODEL\" \"$DST_SWIFT_DIR\" \\\n    --language Swift \\\n    --swift-version 5 \\\n    --class-prefix \"\"\n\necho \"Compiled model saved to: ${DST_MLMODELC_DIR}\"\necho \"Generated Swift class saved to: ${DST_SWIFT_DIR}\"\n";
+		};
+		BF22246C2E7977F8006371B7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${SRCROOT}/Resources/${MODEL_NAME}.mlmodelc",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\nMODEL_NAME=\"GeoClassifier\"\nSRC_MLMODEL=\"${SRCROOT}/data/${MODEL_NAME}.mlpackage\"\n\n# Directory to store the compiled model (.mlmodelc) for the app bundle\nDST_MLMODELC_DIR=\"${SRCROOT}/Resources/\"\n\n# Directory to store the generated Swift class file\nDST_SWIFT_DIR=\"${SRCROOT}/GeneratedSources/\"\n\n# Create the output directories if they don't exist\nmkdir -p \"$DST_MLMODELC_DIR\"\nmkdir -p \"$DST_SWIFT_DIR\"\n\n# 1. Compile the .mlpackage to .mlmodelc for the app bundle\nxcrun coremlcompiler compile \"$SRC_MLMODEL\" \"$DST_MLMODELC_DIR\"\n\n# 2. Generate the Swift class file from the .mlpackage\nxcrun coremlcompiler generate \"$SRC_MLMODEL\" \"$DST_SWIFT_DIR\" \\\n    --language Swift \\\n    --swift-version 5 \\\n    --class-prefix \"\"\n\necho \"Compiled model saved to: ${DST_MLMODELC_DIR}\"\necho \"Generated Swift class saved to: ${DST_SWIFT_DIR}\"\n";
+		};
 		BF5346DB2E71CBB00010D446 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -268,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF22246A2E797714006371B7 /* GeoClassifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF22246D2E797850006371B7 /* GeoClassifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
