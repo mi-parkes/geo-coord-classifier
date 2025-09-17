@@ -1,33 +1,14 @@
-import CoreML
 // SwiftClassifier.swift
 import Foundation
-
-// Constants for normalization, matching the C++ code
-private let minLat: Float = 47.4979
-private let maxLat: Float = 52.5251
-private let minLon: Float = -0.1270
-private let maxLon: Float = 19.0514
-private let epsilon: Float = 1e-8
-
-/// Normalizes a single geo-coordinate pair using the defined min/max bounds.
-/// This function mirrors the C++ `normalize_coords` logic.
-/// - Parameter coords: An array of two floats [latitude, longitude].
-/// - Returns: A new array with the normalized latitude and longitude.
-private func normalizeCoords(coords: [Float]) -> [Float] {
-    let normalizedLat = (coords[0] - minLat) / (maxLat - minLat + epsilon)
-    let normalizedLon = (coords[1] - minLon) / (maxLon - minLon + epsilon)
-    return [normalizedLat, normalizedLon]
-}
+import CoreML
 
 /// A helper function to find the index of the max value in an MLMultiArray.
-/// This is a more robust approach than iterating with subscripts.
 private func findMaxIndex(in array: MLMultiArray) -> Int {
     guard array.count > 0 else { return -1 }
 
     var maxVal: Float = -Float.greatestFiniteMagnitude
     var maxIndex: Int = -1
 
-    // Access the raw data pointer for efficiency and reliability
     let ptr = UnsafeMutablePointer<Float>(OpaquePointer(array.dataPointer))
 
     for i in 0..<array.count {
@@ -45,69 +26,103 @@ public class SwiftClassifier: ClassifierProtocol {
     // Core ML model instance
     private var geoClassifierModel: GeoClassifier
 
+    // Normalization params
+    private var minLat: Float = 0
+    private var maxLat: Float = 0
+    private var minLon: Float = 0
+    private var maxLon: Float = 0
+    private let epsilon: Float = 1e-8
+
     // Error state
     private var lastError: String = ""
 
     // Initialization state
     private var initialized: Bool = false
 
-    // The initializer is a special method named 'init'
-    // It is responsible for setting up all stored properties.
+    // Default initializer
     public init() {
-        // Initialize with default values, or load the model here
-        // We'll load the model in the `minit` function as per the protocol
-        self.geoClassifierModel = try! GeoClassifier()  // Or a placeholder
+        self.geoClassifierModel = try! GeoClassifier()
     }
 
+    /// Initializes the classifier and loads normalization metadata.
     public func minit(modelURL: URL, verbose: Bool) -> Int {
         do {
             self.geoClassifierModel = try GeoClassifier(contentsOf: modelURL)
-            self.initialized = true
-            // Access metadata
-            let metadata =
-                self.geoClassifierModel.model.modelDescription.metadata[
-                    .creatorDefinedKey
-                ] as? [String: String]
 
-            if let metadata = metadata {
-                if let minValsString = metadata["min_vals"] {
-                    let minVals = minValsString.split(separator: ",").compactMap
-                    { Double($0) }
-                    //print("min_vals:", minVals)
-                }
-                if let maxValsString = metadata["max_vals"] {
-                    let maxVals = maxValsString.split(separator: ",").compactMap
-                    { Double($0) }
-                    //print("max_vals:", maxVals)
-                }
+            guard let metadata =
+                self.geoClassifierModel.model.modelDescription.metadata[.creatorDefinedKey]
+                    as? [String: String]
+            else {
+                self.lastError = "Model metadata missing."
+                self.initialized = false
+                return 0
             }
+
+            // Parse min values
+            guard let minValsString = metadata["min_vals"] else {
+                self.lastError = "Model metadata missing min_vals."
+                self.initialized = false
+                return 0
+            }
+            let minVals = minValsString.split(separator: ",").compactMap { Float($0) }
+            guard minVals.count == 2 else {
+                self.lastError = "Invalid min_vals metadata format."
+                self.initialized = false
+                return 0
+            }
+            self.minLat = minVals[0]
+            self.minLon = minVals[1]
+
+            // Parse max values
+            guard let maxValsString = metadata["max_vals"] else {
+                self.lastError = "Model metadata missing max_vals."
+                self.initialized = false
+                return 0
+            }
+            let maxVals = maxValsString.split(separator: ",").compactMap { Float($0) }
+            guard maxVals.count == 2 else {
+                self.lastError = "Invalid max_vals metadata format."
+                self.initialized = false
+                return 0
+            }
+            self.maxLat = maxVals[0]
+            self.maxLon = maxVals[1]
+
+            if verbose {
+                print("Loaded normalization: lat [\(minLat), \(maxLat)], lon [\(minLon), \(maxLon)]")
+            }
+
+            self.initialized = true
             return 1
         } catch {
-            self.lastError =
-                "Failed to load Core ML model: \(error.localizedDescription)"
+            self.lastError = "Failed to load Core ML model: \(error.localizedDescription)"
             self.initialized = false
             return 0
         }
     }
 
+    /// Normalizes a coordinate pair using loaded metadata values.
+    private func normalizeCoords(coords: [Float]) -> [Float] {
+        let normalizedLat = (coords[0] - self.minLat) / (self.maxLat - self.minLat + epsilon)
+        let normalizedLon = (coords[1] - self.minLon) / (self.maxLon - self.minLon + epsilon)
+        return [normalizedLat, normalizedLon]
+    }
+
+    /// Performs inference on a coordinate pair.
     public func infer(v1: Float, v2: Float) -> Int {
         guard initialized else {
             self.lastError = "Classifier not initialized."
             return -1
         }
 
-        // 1. Create the MLMultiArray with the raw, un-normalized input values.
-        // The Core ML model will handle the normalization internally.
-        let input = try! MLMultiArray(
-            shape: [1, 2] as [NSNumber],
-            dataType: .float
-        )
+        // Create input array
+        let input = try! MLMultiArray(shape: [1, 2] as [NSNumber], dataType: .float)
         let normalizedCoords = normalizeCoords(coords: [v1, v2])
 
         input[0] = NSNumber(value: normalizedCoords[0])
         input[1] = NSNumber(value: normalizedCoords[1])
 
-        // 3. Pass the un-normalized input to the model.
+        // Run prediction
         guard
             let prediction = try? self.geoClassifierModel.prediction(
                 input: GeoClassifierInput(input: input)
@@ -118,19 +133,20 @@ public class SwiftClassifier: ClassifierProtocol {
         }
 
         let predictedLabel = findMaxIndex(in: prediction.output)
-        //print("Sample: Original Coords = [\(v1), \(v2)], Normalized Coords = [\(normalizedCoords[0]), \(normalizedCoords[1])] label=\(predictedLabel)")
-
         return predictedLabel
     }
 
+    /// Dispose classifier resources
     public func dispose() {
         self.initialized = false
-        // No de-initialization needed for Core ML models, but you can add cleanup logic here
     }
 
+    /// Get last error
     public func getLastError() -> String {
         return self.lastError
     }
+
+    /// Get classifier name
     public func getName() -> String {
         return "coreml"
     }

@@ -10,11 +10,11 @@
 		BF0811A62E6E17AE00A17EEE /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF0811A52E6E17AE00A17EEE /* classifier */; };
 		BF22246A2E797714006371B7 /* GeoClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2224692E797714006371B7 /* GeoClassifier.swift */; };
 		BF22246B2E797752006371B7 /* GeoClassifier.mlmodelc in Copy Files */ = {isa = PBXBuildFile; fileRef = BF2224672E7972D7006371B7 /* GeoClassifier.mlmodelc */; };
-		BF22246D2E797850006371B7 /* GeoClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2224692E797714006371B7 /* GeoClassifier.swift */; };
 		BF22246E2E79785B006371B7 /* GeoClassifier.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = BF2224672E7972D7006371B7 /* GeoClassifier.mlmodelc */; };
+		BF4348AB2E7C459C00DBBB45 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; };
+		BF4348AC2E7C459C00DBBB45 /* onnxruntime.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF97F7EE2E7BE479002A1FB5 /* GeoClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2224692E797714006371B7 /* GeoClassifier.swift */; };
 		BFD87FFB2E71C8910071BEA8 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; };
-		BFD87FFE2E71C91A0071BEA8 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; };
-		BFD880002E71C9E80071BEA8 /* onnxruntime.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFC6D0772E71C65400ABCC19 /* onnxruntime.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFF5C86A2E6D4ED000702566 /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BFF5C8692E6D4ED000702566 /* classifier */; };
 /* End PBXBuildFile section */
 
@@ -30,14 +30,15 @@
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFD87FFF2E71C9D80071BEA8 /* CopyFiles */ = {
+		BF4348AD2E7C459C00DBBB45 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstSubfolderSpec = 10;
 			files = (
-				BFD880002E71C9E80071BEA8 /* onnxruntime.xcframework in CopyFiles */,
+				BF4348AC2E7C459C00DBBB45 /* onnxruntime.xcframework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -125,8 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD87FFE2E71C91A0071BEA8 /* onnxruntime.xcframework in Frameworks */,
 				BFF5C86A2E6D4ED000702566 /* classifier in Frameworks */,
+				BF4348AB2E7C459C00DBBB45 /* onnxruntime.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +202,7 @@
 				BFF5C84B2E6D4E1B00702566 /* Sources */,
 				BFF5C84C2E6D4E1B00702566 /* Frameworks */,
 				BFF5C84D2E6D4E1B00702566 /* Resources */,
-				BFD87FFF2E71C9D80071BEA8 /* CopyFiles */,
+				BF4348AD2E7C459C00DBBB45 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,7 +282,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${SRCROOT}/Resources/${MODEL_NAME}.mlmodelc",
+				"$(SRCROOT)/Resources/GeoClassifier.mlmodelc",
+				"$(SRCROOT)/GeneratedSources/GeoClassifier.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -299,7 +301,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${SRCROOT}/Resources/${MODEL_NAME}.mlmodelc",
+				"$(SRCROOT)/Resources/GeoClassifier.mlmodelc",
+				"${SRCROOT}/GeneratedSources/GeoClassifier.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -338,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF22246D2E797850006371B7 /* GeoClassifier.swift in Sources */,
+				BF97F7EE2E7BE479002A1FB5 /* GeoClassifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
