@@ -39,9 +39,13 @@ build-macosx:
 		-configuration $(BUILD_CONFIGURATION) \
 		"ARCHS=$(ARCHS)"
 
+get-macosx-bundle-identifier:
+	defaults read $(CURDIR)/DerivedData/geo-coord-classifier/Build/Products/$(BUILD_CONFIGURATION)/geo-coord-classifier.app/Contents/Info.plist CFBundleIdentifier
+
 run-macosx:
 	find DerivedData/geo-coord-classifier/Build/Products -type f -name "libonnxruntime*.dylib"
-	open DerivedData/geo-coord-classifier/Build/Products/$(BUILD_CONFIGURATION)/geo-coord-classifier.app
+	open DerivedData/geo-coord-classifier/Build/Products/$(BUILD_CONFIGURATION)/geo-coord-classifier.app \
+	$(if $(VERBOSE),--args -verbose,)
 
 build-cli-macosx:
 	xcodebuild $(if $(VERBOSE),-verbose,) -project geo-coord-classifier.xcodeproj \

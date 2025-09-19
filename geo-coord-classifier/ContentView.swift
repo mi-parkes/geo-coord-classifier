@@ -6,9 +6,14 @@ let WelcomeText: String = "This App tests Swift/C++ integration and deployment o
 
 struct ContentView: View {
     @State var gmsg: String = WelcomeText
-    @State var verbose: Bool = false
-    @State private var showBackground = true
+    @State var verbose: Bool
+    @State private var showBackground: Bool
     
+    init(verbose: Bool = false) {
+        _verbose = State(initialValue: verbose)
+        _showBackground = State(initialValue: !verbose)
+    }
+
     var body: some View {
         #if os(macOS)
         // macOS Layout
