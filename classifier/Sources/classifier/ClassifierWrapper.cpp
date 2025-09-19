@@ -1,4 +1,4 @@
-#include "Classifier.hpp"
+#include "ClassifierWrapper.hpp"
 #include <onnxruntime/onnxruntime_cxx_api.h>
 #include <algorithm>
 #include <memory>

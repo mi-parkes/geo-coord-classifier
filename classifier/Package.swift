@@ -10,14 +10,14 @@ let package = Package(
     products: [
         .library(
             name: "classifier",
-            targets: ["classifier"]
+            targets: ["classifierABC"]
         )
     ],
     targets: [
         .target(
-            name: "classifier",
+            name: "classifierABC",
             path: "Sources/classifier",
-            sources: ["Classifier.cpp"],
+            sources: ["ClassifierWrapper.cpp"],
             cxxSettings: [
                 .headerSearchPath("include"),
             ]

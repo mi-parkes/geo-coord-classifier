@@ -1,13 +1,22 @@
+//
+//  ContentView.swift
+//  geoCoordClassifier
+//
 import SwiftUI
-import classifier
 import Foundation
+import geoCoordClassifierCore
 
 let WelcomeText: String = "This App tests Swift/C++ integration and deployment of tiny onnx model created with pytorch:"
 
 struct ContentView: View {
     @State var gmsg: String = WelcomeText
-    @State var verbose: Bool = false
-    @State private var showBackground = true
+    @State var verbose: Bool
+    @State private var showBackground: Bool
+    
+    init(verbose: Bool = false) {
+        _verbose = State(initialValue: verbose)
+        _showBackground = State(initialValue: !verbose)
+    }
     
     var body: some View {
         #if os(macOS)
@@ -114,11 +123,12 @@ struct ContentView: View {
 
     func runTest() {
         var classifier: ClassifierProtocol
+        let testURL = getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
+        var modelURL = getFileUrl(filename: "GeoClassifier", ext: "onnx")
+
 
         classifier = CppClassifierWrapper()
 
-        let testURL = getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
-        var modelURL = getFileUrl(filename: "GeoClassifier", ext: "onnx")
         if let testURL = testURL, let modelURL = modelURL {
             let tc: TestClassifier = TestClassifier(
                 geoClassifier:classifier,
@@ -134,7 +144,7 @@ struct ContentView: View {
         }
 
         classifier = SwiftClassifier()
-        modelURL = getFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
+        modelURL = getCoreFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
         if let testURL = testURL, let modelURL = modelURL  {
             let tc: TestClassifier = TestClassifier(
                 geoClassifier:classifier,
