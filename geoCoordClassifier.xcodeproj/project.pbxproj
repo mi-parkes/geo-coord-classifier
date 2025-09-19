@@ -1,0 +1,1213 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF0855492E7EC44400D3B610 /* geoCoordClassifierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; };
+		BF56FCC42E7EE20A00D2F271 /* geoCoordClassifierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; };
+		BF56FCC52E7EE20A00D2F271 /* geoCoordClassifierCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF56FD252E7EF9CB00D2F271 /* geoCoordClassifierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; };
+		BF56FD262E7EF9CB00D2F271 /* geoCoordClassifierCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF56FD5F2E7F069800D2F271 /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF56FD5E2E7F069800D2F271 /* classifier */; };
+		BF56FD602E7F069800D2F271 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */; };
+		BF56FD662E7F0AEA00D2F271 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */; };
+		BF56FD672E7F0AFD00D2F271 /* onnxruntime.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF08551D2E7EC3C900D3B610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0855072E7EC3C700D3B610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08550E2E7EC3C700D3B610;
+			remoteInfo = geoCoordClassifier;
+		};
+		BF0855272E7EC3C900D3B610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0855072E7EC3C700D3B610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08550E2E7EC3C700D3B610;
+			remoteInfo = geoCoordClassifier;
+		};
+		BF08554A2E7EC44400D3B610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0855072E7EC3C700D3B610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08553D2E7EC44400D3B610;
+			remoteInfo = geoCoordClassifierCore;
+		};
+		BF08554C2E7EC44400D3B610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0855072E7EC3C700D3B610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08550E2E7EC3C700D3B610;
+			remoteInfo = geoCoordClassifier;
+		};
+		BF56FC912E7EDDAD00D2F271 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0855072E7EC3C700D3B610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08553D2E7EC44400D3B610;
+			remoteInfo = geoCoordClassifierCore;
+		};
+		BF56FD272E7EF9CB00D2F271 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0855072E7EC3C700D3B610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF08553D2E7EC44400D3B610;
+			remoteInfo = geoCoordClassifierCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF56FCC62E7EE20A00D2F271 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF56FD672E7F0AFD00D2F271 /* onnxruntime.xcframework in Embed Frameworks */,
+				BF56FCC52E7EE20A00D2F271 /* geoCoordClassifierCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF56FD1C2E7EF99400D2F271 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF56FD292E7EF9CB00D2F271 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF56FD262E7EF9CB00D2F271 /* geoCoordClassifierCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF56FD622E7F069800D2F271 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BF08550F2E7EC3C700D3B610 /* geoCoordClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geoCoordClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF08551C2E7EC3C900D3B610 /* geoCoordClassifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geoCoordClassifierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0855262E7EC3C900D3B610 /* geoCoordClassifierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geoCoordClassifierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = geoCoordClassifierCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0855482E7EC44400D3B610 /* geoCoordClassifierCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geoCoordClassifierCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = onnxruntime.xcframework; sourceTree = "<group>"; };
+		BF56FD1E2E7EF99400D2F271 /* geoCoordClassifierCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = geoCoordClassifierCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF56FD592E7F063800D2F271 /* classifier */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = classifier; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BF0855E52E7ED3FA00D3B610 /* Exceptions for "data" folder in "geoCoordClassifier" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				GeoClassifier.onnx,
+				GeoClassifierEvaluationData.json,
+			);
+			target = BF08550E2E7EC3C700D3B610 /* geoCoordClassifier */;
+		};
+		BF56FCCC2E7EEF1400D2F271 /* Exceptions for "data" folder in "geoCoordClassifierCore" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				GeoClassifier.mlpackage,
+			);
+			target = BF08553D2E7EC44400D3B610 /* geoCoordClassifierCore */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		BF56FD2C2E7EFAB100D2F271 /* Exceptions for "data" folder in "Copy Files" phase from "geoCoordClassifierCLI" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = BF56FD1C2E7EF99400D2F271 /* CopyFiles */;
+			membershipExceptions = (
+				GeoClassifier.onnx,
+				GeoClassifierEvaluationData.json,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BF0855112E7EC3C700D3B610 /* geoCoordClassifier */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = geoCoordClassifier;
+			sourceTree = "<group>";
+		};
+		BF08551F2E7EC3C900D3B610 /* geoCoordClassifierTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = geoCoordClassifierTests;
+			sourceTree = "<group>";
+		};
+		BF0855292E7EC3C900D3B610 /* geoCoordClassifierUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = geoCoordClassifierUITests;
+			sourceTree = "<group>";
+		};
+		BF08553F2E7EC44400D3B610 /* geoCoordClassifierCore */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = geoCoordClassifierCore;
+			sourceTree = "<group>";
+		};
+		BF08554E2E7EC44400D3B610 /* geoCoordClassifierCoreTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = geoCoordClassifierCoreTests;
+			sourceTree = "<group>";
+		};
+		BF0855632E7EC4C000D3B610 /* data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BF0855E52E7ED3FA00D3B610 /* Exceptions for "data" folder in "geoCoordClassifier" target */,
+				BF56FCCC2E7EEF1400D2F271 /* Exceptions for "data" folder in "geoCoordClassifierCore" target */,
+				BF56FD2C2E7EFAB100D2F271 /* Exceptions for "data" folder in "Copy Files" phase from "geoCoordClassifierCLI" target */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		BF56FD1F2E7EF99400D2F271 /* geoCoordClassifierCLI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = geoCoordClassifierCLI;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF08550C2E7EC3C700D3B610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF56FD662E7F0AEA00D2F271 /* onnxruntime.xcframework in Frameworks */,
+				BF56FCC42E7EE20A00D2F271 /* geoCoordClassifierCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855192E7EC3C900D3B610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855232E7EC3C900D3B610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08553B2E7EC44400D3B610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF56FD5F2E7F069800D2F271 /* classifier in Frameworks */,
+				BF56FD602E7F069800D2F271 /* onnxruntime.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855452E7EC44400D3B610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0855492E7EC44400D3B610 /* geoCoordClassifierCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF56FD1B2E7EF99400D2F271 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF56FD252E7EF9CB00D2F271 /* geoCoordClassifierCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF0855062E7EC3C700D3B610 = {
+			isa = PBXGroup;
+			children = (
+				BF0855112E7EC3C700D3B610 /* geoCoordClassifier */,
+				BF08551F2E7EC3C900D3B610 /* geoCoordClassifierTests */,
+				BF0855292E7EC3C900D3B610 /* geoCoordClassifierUITests */,
+				BF08553F2E7EC44400D3B610 /* geoCoordClassifierCore */,
+				BF08554E2E7EC44400D3B610 /* geoCoordClassifierCoreTests */,
+				BF56FD1F2E7EF99400D2F271 /* geoCoordClassifierCLI */,
+				BF0855102E7EC3C700D3B610 /* Products */,
+				BF0855632E7EC4C000D3B610 /* data */,
+				BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */,
+				BF0855662E7EC62700D3B610 /* Frameworks */,
+				BF56FD592E7F063800D2F271 /* classifier */,
+			);
+			sourceTree = "<group>";
+		};
+		BF0855102E7EC3C700D3B610 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF08550F2E7EC3C700D3B610 /* geoCoordClassifier.app */,
+				BF08551C2E7EC3C900D3B610 /* geoCoordClassifierTests.xctest */,
+				BF0855262E7EC3C900D3B610 /* geoCoordClassifierUITests.xctest */,
+				BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */,
+				BF0855482E7EC44400D3B610 /* geoCoordClassifierCoreTests.xctest */,
+				BF56FD1E2E7EF99400D2F271 /* geoCoordClassifierCLI */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF0855662E7EC62700D3B610 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BF0855392E7EC44400D3B610 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BF08550E2E7EC3C700D3B610 /* geoCoordClassifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0855302E7EC3C900D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifier" */;
+			buildPhases = (
+				BF08550B2E7EC3C700D3B610 /* Sources */,
+				BF08550C2E7EC3C700D3B610 /* Frameworks */,
+				BF08550D2E7EC3C700D3B610 /* Resources */,
+				BF56FCC62E7EE20A00D2F271 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF56FC922E7EDDAD00D2F271 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BF0855112E7EC3C700D3B610 /* geoCoordClassifier */,
+			);
+			name = geoCoordClassifier;
+			packageProductDependencies = (
+			);
+			productName = geoCoordClassifier;
+			productReference = BF08550F2E7EC3C700D3B610 /* geoCoordClassifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF08551B2E7EC3C900D3B610 /* geoCoordClassifierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0855332E7EC3C900D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierTests" */;
+			buildPhases = (
+				BF0855182E7EC3C900D3B610 /* Sources */,
+				BF0855192E7EC3C900D3B610 /* Frameworks */,
+				BF08551A2E7EC3C900D3B610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF08551E2E7EC3C900D3B610 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BF08551F2E7EC3C900D3B610 /* geoCoordClassifierTests */,
+			);
+			name = geoCoordClassifierTests;
+			packageProductDependencies = (
+			);
+			productName = geoCoordClassifierTests;
+			productReference = BF08551C2E7EC3C900D3B610 /* geoCoordClassifierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF0855252E7EC3C900D3B610 /* geoCoordClassifierUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0855362E7EC3C900D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierUITests" */;
+			buildPhases = (
+				BF0855222E7EC3C900D3B610 /* Sources */,
+				BF0855232E7EC3C900D3B610 /* Frameworks */,
+				BF0855242E7EC3C900D3B610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF0855282E7EC3C900D3B610 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BF0855292E7EC3C900D3B610 /* geoCoordClassifierUITests */,
+			);
+			name = geoCoordClassifierUITests;
+			packageProductDependencies = (
+			);
+			productName = geoCoordClassifierUITests;
+			productReference = BF0855262E7EC3C900D3B610 /* geoCoordClassifierUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BF08553D2E7EC44400D3B610 /* geoCoordClassifierCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0855552E7EC44400D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierCore" */;
+			buildPhases = (
+				BF0855392E7EC44400D3B610 /* Headers */,
+				BF08553A2E7EC44400D3B610 /* Sources */,
+				BF08553B2E7EC44400D3B610 /* Frameworks */,
+				BF08553C2E7EC44400D3B610 /* Resources */,
+				BF56FD622E7F069800D2F271 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF56FD642E7F077B00D2F271 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BF08553F2E7EC44400D3B610 /* geoCoordClassifierCore */,
+			);
+			name = geoCoordClassifierCore;
+			packageProductDependencies = (
+				BF56FD5E2E7F069800D2F271 /* classifier */,
+			);
+			productName = geoCoordClassifierCore;
+			productReference = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BF0855472E7EC44400D3B610 /* geoCoordClassifierCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0855592E7EC44400D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierCoreTests" */;
+			buildPhases = (
+				BF0855442E7EC44400D3B610 /* Sources */,
+				BF0855452E7EC44400D3B610 /* Frameworks */,
+				BF0855462E7EC44400D3B610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF08554B2E7EC44400D3B610 /* PBXTargetDependency */,
+				BF08554D2E7EC44400D3B610 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BF08554E2E7EC44400D3B610 /* geoCoordClassifierCoreTests */,
+			);
+			name = geoCoordClassifierCoreTests;
+			packageProductDependencies = (
+			);
+			productName = geoCoordClassifierCoreTests;
+			productReference = BF0855482E7EC44400D3B610 /* geoCoordClassifierCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF56FD1D2E7EF99400D2F271 /* geoCoordClassifierCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF56FD242E7EF99400D2F271 /* Build configuration list for PBXNativeTarget "geoCoordClassifierCLI" */;
+			buildPhases = (
+				BF56FD1A2E7EF99400D2F271 /* Sources */,
+				BF56FD1B2E7EF99400D2F271 /* Frameworks */,
+				BF56FD1C2E7EF99400D2F271 /* CopyFiles */,
+				BF56FD292E7EF9CB00D2F271 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF56FD282E7EF9CB00D2F271 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BF56FD1F2E7EF99400D2F271 /* geoCoordClassifierCLI */,
+			);
+			name = geoCoordClassifierCLI;
+			packageProductDependencies = (
+			);
+			productName = geoCoordClassifierCLI;
+			productReference = BF56FD1E2E7EF99400D2F271 /* geoCoordClassifierCLI */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF0855072E7EC3C700D3B610 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					BF08550E2E7EC3C700D3B610 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					BF08551B2E7EC3C900D3B610 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = BF08550E2E7EC3C700D3B610;
+					};
+					BF0855252E7EC3C900D3B610 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = BF08550E2E7EC3C700D3B610;
+					};
+					BF08553D2E7EC44400D3B610 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					BF0855472E7EC44400D3B610 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = BF08550E2E7EC3C700D3B610;
+					};
+					BF56FD1D2E7EF99400D2F271 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = BF08550A2E7EC3C700D3B610 /* Build configuration list for PBXProject "geoCoordClassifier" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF0855062E7EC3C700D3B610;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BF56FD582E7F05F100D2F271 /* XCLocalSwiftPackageReference "classifier" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BF0855102E7EC3C700D3B610 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF08550E2E7EC3C700D3B610 /* geoCoordClassifier */,
+				BF08551B2E7EC3C900D3B610 /* geoCoordClassifierTests */,
+				BF0855252E7EC3C900D3B610 /* geoCoordClassifierUITests */,
+				BF08553D2E7EC44400D3B610 /* geoCoordClassifierCore */,
+				BF0855472E7EC44400D3B610 /* geoCoordClassifierCoreTests */,
+				BF56FD1D2E7EF99400D2F271 /* geoCoordClassifierCLI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF08550D2E7EC3C700D3B610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08551A2E7EC3C900D3B610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855242E7EC3C900D3B610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08553C2E7EC44400D3B610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855462E7EC44400D3B610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF08550B2E7EC3C700D3B610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855182E7EC3C900D3B610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855222E7EC3C900D3B610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF08553A2E7EC44400D3B610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0855442E7EC44400D3B610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF56FD1A2E7EF99400D2F271 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF08551E2E7EC3C900D3B610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08550E2E7EC3C700D3B610 /* geoCoordClassifier */;
+			targetProxy = BF08551D2E7EC3C900D3B610 /* PBXContainerItemProxy */;
+		};
+		BF0855282E7EC3C900D3B610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08550E2E7EC3C700D3B610 /* geoCoordClassifier */;
+			targetProxy = BF0855272E7EC3C900D3B610 /* PBXContainerItemProxy */;
+		};
+		BF08554B2E7EC44400D3B610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08553D2E7EC44400D3B610 /* geoCoordClassifierCore */;
+			targetProxy = BF08554A2E7EC44400D3B610 /* PBXContainerItemProxy */;
+		};
+		BF08554D2E7EC44400D3B610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08550E2E7EC3C700D3B610 /* geoCoordClassifier */;
+			targetProxy = BF08554C2E7EC44400D3B610 /* PBXContainerItemProxy */;
+		};
+		BF56FC922E7EDDAD00D2F271 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08553D2E7EC44400D3B610 /* geoCoordClassifierCore */;
+			targetProxy = BF56FC912E7EDDAD00D2F271 /* PBXContainerItemProxy */;
+		};
+		BF56FD282E7EF9CB00D2F271 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF08553D2E7EC44400D3B610 /* geoCoordClassifierCore */;
+			targetProxy = BF56FD272E7EF9CB00D2F271 /* PBXContainerItemProxy */;
+		};
+		BF56FD642E7F077B00D2F271 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BF56FD632E7F077B00D2F271 /* classifier */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BF08552E2E7EC3C900D3B610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF08552F2E7EC3C900D3B610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		BF0855312E7EC3C900D3B610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		BF0855322E7EC3C900D3B610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		BF0855342E7EC3C900D3B610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/geoCoordClassifier.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/geoCoordClassifier";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		BF0855352E7EC3C900D3B610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/geoCoordClassifier.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/geoCoordClassifier";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		BF0855372E7EC3C900D3B610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = geoCoordClassifier;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		BF0855382E7EC3C900D3B610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = geoCoordClassifier;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		BF0855562E7EC44400D3B610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		BF0855572E7EC44400D3B610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		BF08555A2E7EC44400D3B610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/geoCoordClassifier.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/geoCoordClassifier";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		BF08555B2E7EC44400D3B610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_CODE_COVERAGE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MP.geoCoordClassifierCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/geoCoordClassifier.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/geoCoordClassifier";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		BF56FD222E7EF99400D2F271 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = geoCoordClassifierCLI/geoCoordClassifierCLI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = MP.geoCoordClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BF56FD232E7EF99400D2F271 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = geoCoordClassifierCLI/geoCoordClassifierCLI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWRU5YDXZ6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = MP.geoCoordClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF08550A2E7EC3C700D3B610 /* Build configuration list for PBXProject "geoCoordClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF08552E2E7EC3C900D3B610 /* Debug */,
+				BF08552F2E7EC3C900D3B610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF0855302E7EC3C900D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0855312E7EC3C900D3B610 /* Debug */,
+				BF0855322E7EC3C900D3B610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF0855332E7EC3C900D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0855342E7EC3C900D3B610 /* Debug */,
+				BF0855352E7EC3C900D3B610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF0855362E7EC3C900D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0855372E7EC3C900D3B610 /* Debug */,
+				BF0855382E7EC3C900D3B610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF0855552E7EC44400D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0855562E7EC44400D3B610 /* Debug */,
+				BF0855572E7EC44400D3B610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF0855592E7EC44400D3B610 /* Build configuration list for PBXNativeTarget "geoCoordClassifierCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF08555A2E7EC44400D3B610 /* Debug */,
+				BF08555B2E7EC44400D3B610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF56FD242E7EF99400D2F271 /* Build configuration list for PBXNativeTarget "geoCoordClassifierCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF56FD222E7EF99400D2F271 /* Debug */,
+				BF56FD232E7EF99400D2F271 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		BF56FD582E7F05F100D2F271 /* XCLocalSwiftPackageReference "classifier" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = classifier;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF56FD5E2E7F069800D2F271 /* classifier */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = classifier;
+		};
+		BF56FD632E7F077B00D2F271 /* classifier */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF56FD582E7F05F100D2F271 /* XCLocalSwiftPackageReference "classifier" */;
+			productName = classifier;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BF0855072E7EC3C700D3B610 /* Project object */;
+}

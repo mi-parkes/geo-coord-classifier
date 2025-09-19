@@ -1,4 +1,10 @@
+//
+//  main.swift
+//  geoCoordClassifierCLI
+//
 import Foundation
+import geoCoordClassifierCore
+//import classifier
 
 let args = CommandLine.arguments
 let verbose = args.contains("--verbose")
@@ -11,10 +17,11 @@ func printer(msg: String) {
 
 var classifier: ClassifierProtocol
 
-classifier = CppClassifierWrapper()
-
 let testURL = getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
 var modelURL = getFileUrl(filename: "GeoClassifier", ext: "onnx")
+
+classifier = CppClassifierWrapper()
+
 if let testURL = testURL, let modelURL = modelURL {
     let tc: TestClassifier = TestClassifier(
         geoClassifier:classifier,
@@ -29,7 +36,7 @@ if let testURL = testURL, let modelURL = modelURL {
 }
 
 classifier = SwiftClassifier()
-modelURL = getFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
+modelURL = getCoreFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
 
 if let testURL = testURL, let modelURL = modelURL  {
     let tc: TestClassifier = TestClassifier(
@@ -43,3 +50,4 @@ if let testURL = testURL, let modelURL = modelURL  {
         printer(msg: "Check your setup")
     }
 }
+

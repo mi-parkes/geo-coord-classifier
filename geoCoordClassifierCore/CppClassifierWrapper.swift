@@ -1,7 +1,8 @@
 // CppClassifierWrapper.swift
 
 import Foundation
-import classifier
+//import classifier
+@_implementationOnly import classifierABC
 
 public class CppClassifierWrapper: ClassifierProtocol {
     
