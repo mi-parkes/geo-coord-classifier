@@ -1,5 +1,6 @@
 .ONESHELL:
 SHELL           =/bin/bash
+.SHELLFLAGS 	= -e -c
 MAKEFLAGS       += $(if $(VERBOSE),,--no-print-directory)
 MINMAKEVERSION  =3.82
 $(if $(findstring $(MINMAKEVERSION),$(firstword $(sort $(MINMAKEVERSION) $(MAKE_VERSION)))),,$(error The Makefile requires minimal GNU make version:$(MINMAKEVERSION) and you are using:$(MAKE_VERSION)))
@@ -8,7 +9,7 @@ BUILD_CONFIGURATION = Debug
 ARCHS = arm64
 PROJECTDIR = geoCoordClassifier.xcodeproj
 
-.PHONY: clean clean-res
+.PHONY: clean help
 
 $(MAKE_VERBOSE).SILENT:
 	echo NothingAtAll
@@ -25,18 +26,26 @@ help:
 	echo $(MAKE) run-app-in-ios-simulator
 	echo $(MAKE) build-iphoneos
 
-clean: clean-res
+targets:
+	xcodebuild -list -project $(PROJECTDIR)
+
+sdks:
+	xcodebuild -showsdks
+
+destinations:
+	xcodebuild  -project $(PROJECTDIR) -scheme geoCoordClassifier -showdestinations
+	xcodebuild  -project $(PROJECTDIR) -scheme geoCoordClassifierCLI -showdestinations
+
+clean:
 	rm -rf DerivedData
+	rm -rf Build
 	rm -rf $(PROJECTDIR)/xcuserdata
 	rm -rf $(PROJECTDIR)/project.xcworkspace/xcuserdata
 	rm -rf classifier/.swiftpm
 
-clean-res:
-	rm -rfv GeneratedSources Resources
-
 build-macosx:
 	xcodebuild -project $(PROJECTDIR) \
-	    -scheme geoCoordClassifier \
+		-scheme geoCoordClassifier \
 		-configuration $(BUILD_CONFIGURATION) \
 		"ARCHS=$(ARCHS)"
 
@@ -49,8 +58,9 @@ run-macosx:
 	$(if $(VERBOSE),--args -verbose,)
 
 build-cli-macosx:
-	xcodebuild $(if $(VERBOSE),-verbose,) -project $(PROJECTDIR) \
-	    -scheme geoCoordClassifierCLI \
+	xcodebuild $(if $(VERBOSE),-verbose,) \
+		-project $(PROJECTDIR) \
+		-scheme geoCoordClassifierCLI \
 		-configuration $(BUILD_CONFIGURATION) \
 		"ARCHS=$(ARCHS)"
 
@@ -62,7 +72,7 @@ run-cli-macosx:
 
 build-ios-iphonesimulator:
 	xcodebuild -project $(PROJECTDIR) \
-	    -scheme geoCoordClassifier \
+		-scheme geoCoordClassifier \
 		-configuration $(BUILD_CONFIGURATION) \
 		-sdk iphonesimulator \
 		"ARCHS=$(ARCHS)"
@@ -95,8 +105,18 @@ get-bundle-identifier:
 
 build-iphoneos:
 	xcodebuild -project $(PROJECTDIR) \
-	    -scheme geoCoordClassifier \
+		-scheme geoCoordClassifier \
 		-configuration $(BUILD_CONFIGURATION) \
 		-sdk iphoneos \
     	-destination generic/platform=iOS \
 		"ARCHS=$(ARCHS)"
+
+sandbox-test:
+	rm -rf /tmp/geo-coord-classifier
+	cd /tmp
+	git clone https://github.com/mi-parkes/geo-coord-classifier.git
+	cd geo-coord-classifier
+	cp -r $(CURDIR)/onnxruntime.xcframework .
+	$(MAKE) build-macosx
+	$(MAKE) build-ios-iphonesimulator
+	$(MAKE) build-iphoneos

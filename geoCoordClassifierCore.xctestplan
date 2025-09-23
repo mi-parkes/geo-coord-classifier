@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "AB9E1967-626E-46E9-ADEF-3788DC9A9899",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:geoCoordClassifier.xcodeproj",
+        "identifier" : "BF0855472E7EC44400D3B610",
+        "name" : "geoCoordClassifierCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}

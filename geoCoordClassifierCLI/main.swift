@@ -1,53 +1,56 @@
 //
-//  main.swift
-//  geoCoordClassifierCLI
+// main.swift
+// geoCoordClassifierCLI
 //
 import Foundation
 import geoCoordClassifierCore
-//import classifier
 
 let args = CommandLine.arguments
 let verbose = args.contains("--verbose")
-
-import Foundation
 
 func printer(msg: String) {
     print(msg)
 }
 
-var classifier: ClassifierProtocol
+let fileGeoDataLoader = FileGeoDataLoader()
 
-let testURL = getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
-var modelURL = getFileUrl(filename: "GeoClassifier", ext: "onnx")
+// --- ONNX Classifier (C++ Wrapper) ---
+var onnxClassifier: ClassifierProtocol = CppClassifierWrapper()
+let onnxModelURL = MainBundleHelper.getFileUrl(filename: "GeoClassifier", ext: "onnx")
+let testDataURL = MainBundleHelper.getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
 
-classifier = CppClassifierWrapper()
-
-if let testURL = testURL, let modelURL = modelURL {
+if let testURL = testDataURL, let modelURL = onnxModelURL {
     let tc: TestClassifier = TestClassifier(
-        geoClassifier:classifier,
+        geoClassifier: onnxClassifier,
+        geoDataLoader: fileGeoDataLoader,
         printer: printer,
         modelURL: modelURL,
-        testURL:testURL,
+        testURL: testURL,
         verbose: verbose
     )
     if !tc.runTest() {
-        printer(msg: "Check your setup")
+        printer(msg: "Check your C++ wrapper setup.")
     }
+} else {
+    printer(msg: "ONNX classifier test skipped: One or more files not found.")
 }
 
-classifier = SwiftClassifier()
-modelURL = getCoreFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
+// --- Core ML Classifier (Swift) ---
+var swiftClassifier: ClassifierProtocol = SwiftClassifier()
+let coreMLModelURL = GeoCoordClassifierBundleHelper.getFileUrl(filename: "GeoClassifier", ext: "mlmodelc")
 
-if let testURL = testURL, let modelURL = modelURL  {
+if let testURL = testDataURL, let modelURL = coreMLModelURL {
     let tc: TestClassifier = TestClassifier(
-        geoClassifier:classifier,
+        geoClassifier: swiftClassifier,
+        geoDataLoader: fileGeoDataLoader,
         printer: printer,
         modelURL: modelURL,
-        testURL:testURL,
+        testURL: testURL,
         verbose: verbose
     )
     if !tc.runTest() {
-        printer(msg: "Check your setup")
+        printer(msg: "Check your Swift classifier setup.")
     }
+} else {
+    printer(msg: "Core ML classifier test skipped: One or more files not found.")
 }
-
