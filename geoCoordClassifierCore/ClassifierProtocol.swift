@@ -1,4 +1,7 @@
+//
 // ClassifierProtocol.swift
+// geoCoordClassifierCore
+//
 import Foundation
 
 public protocol ClassifierProtocol {

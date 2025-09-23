@@ -1,7 +1,5 @@
 .DS_Store
 DerivedData
-geo-coord-classifier.xcodeproj/xcuserdata
-geo-coord-classifier.xcodeproj/project.xcworkspace
 notes
 *.txt
 *.bak
@@ -10,3 +8,5 @@ onnxruntime-release
 onnxruntime.xcframework
 GeneratedSources
 Resources
+geoCoordClassifier.xcodeproj/project.xcworkspace/xcuserdata/
+geoCoordClassifier.xcodeproj/xcuserdata/

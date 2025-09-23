@@ -123,15 +123,16 @@ struct ContentView: View {
 
     func runTest() {
         var classifier: ClassifierProtocol
-        let testURL = getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
-        var modelURL = getFileUrl(filename: "GeoClassifier", ext: "onnx")
-
+        let fileGeoDataLoader = FileGeoDataLoader()
+        let testURL = MainBundleHelper.getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
+        var modelURL = MainBundleHelper.getFileUrl(filename: "GeoClassifier", ext: "onnx")
 
         classifier = CppClassifierWrapper()
 
         if let testURL = testURL, let modelURL = modelURL {
             let tc: TestClassifier = TestClassifier(
                 geoClassifier:classifier,
+                geoDataLoader: fileGeoDataLoader,
                 printer: mprinter,
                 modelURL: modelURL,
                 testURL:testURL,
@@ -144,10 +145,11 @@ struct ContentView: View {
         }
 
         classifier = SwiftClassifier()
-        modelURL = getCoreFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
+        modelURL = GeoCoordClassifierBundleHelper.getFileUrl(filename: "GeoClassifier",ext:"mlmodelc")
         if let testURL = testURL, let modelURL = modelURL  {
             let tc: TestClassifier = TestClassifier(
                 geoClassifier:classifier,
+                geoDataLoader: fileGeoDataLoader,
                 printer: mprinter,
                 modelURL: modelURL,
                 testURL:testURL,

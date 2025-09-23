@@ -1,9 +1,12 @@
+//
 // SwiftClassifier.swift
+// geoCoordClassifierCore
+//
 import Foundation
 import CoreML
 
 /// A helper function to find the index of the max value in an MLMultiArray.
-private func findMaxIndex(in array: MLMultiArray) -> Int {
+internal func findMaxIndex(in array: MLMultiArray) -> Int {
     guard array.count > 0 else { return -1 }
 
     var maxVal: Float = -Float.greatestFiniteMagnitude
@@ -27,17 +30,17 @@ public class SwiftClassifier: ClassifierProtocol {
     private var geoClassifierModel: GeoClassifier
 
     // Normalization params
-    private var minLat: Float = 0
-    private var maxLat: Float = 0
-    private var minLon: Float = 0
-    private var maxLon: Float = 0
-    private let epsilon: Float = 1e-8
+    internal var minLat: Float = 0
+    internal var maxLat: Float = 0
+    internal var minLon: Float = 0
+    internal var maxLon: Float = 0
+    internal let epsilon: Float = 1e-8
 
     // Error state
     private var lastError: String = ""
 
     // Initialization state
-    private var initialized: Bool = false
+    internal var initialized: Bool = false
 
     // Default initializer
     public init() {
@@ -102,7 +105,7 @@ public class SwiftClassifier: ClassifierProtocol {
     }
 
     /// Normalizes a coordinate pair using loaded metadata values.
-    private func normalizeCoords(coords: [Float]) -> [Float] {
+    internal func normalizeCoords(coords: [Float]) -> [Float] {
         let normalizedLat = (coords[0] - self.minLat) / (self.maxLat - self.minLat + epsilon)
         let normalizedLon = (coords[1] - self.minLon) / (self.maxLon - self.minLon + epsilon)
         return [normalizedLat, normalizedLon]
