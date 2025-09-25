@@ -120,3 +120,5 @@ sandbox-test:
 	$(MAKE) build-macosx
 	$(MAKE) build-ios-iphonesimulator
 	$(MAKE) build-iphoneos
+
+-include ../utils.mak

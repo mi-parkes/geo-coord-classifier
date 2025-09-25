@@ -91,3 +91,18 @@ make run-macosx
 ```bash
 make run-cli-macosx
 ```
+
+#### Run App (ios-simulator)
+
+```bash
+gmake start-simulator
+gmake run-app-in-ios-simulator
+```
+
+-----
+
+<p align="center">
+iOS Simulator Screenshot
+<br><br>
+<img src="data/SimulatorScreenshotiPhoneAir.png" alt="something went wrong" style="width:480px;">
+</p>

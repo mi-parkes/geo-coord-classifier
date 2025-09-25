@@ -12,7 +12,8 @@ struct ContentView: View {
     @State var gmsg: String = WelcomeText
     @State var verbose: Bool
     @State private var showBackground: Bool
-    
+    let AppBackgroundColor = Color(white: 0.85) // Light Gray
+    let ButtonFillColor = Color(red: 0.4, green: 0.8, blue: 0.4)
     init(verbose: Bool = false) {
         _verbose = State(initialValue: verbose)
         _showBackground = State(initialValue: !verbose)
@@ -75,27 +76,39 @@ struct ContentView: View {
         VStack(spacing: 0) {
             // Top row of buttons
             HStack {
-                Button("Run test") {
+                Button("TEST") {
                     runTest()
                 }
                 .frame(maxWidth: .infinity)
-                
+                .padding(.vertical, 10)
+                .background(ButtonFillColor)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+
                 Button(action: {
                     verbose.toggle()
                     showBackground.toggle()
                     gmsg = WelcomeText
                 }) {
-                    Text(verbose ? "Verbose OFF" : "Verbose ON")
+                    Text(verbose ? "TERSE" : "VERBOSE")
                 }
                 .frame(maxWidth: .infinity)
-                
-                Button("Clear") {
+                .padding(.vertical, 10)
+                .background(ButtonFillColor)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+
+                Button("CLEAR") {
                     gmsg = WelcomeText
                 }
                 .frame(maxWidth: .infinity)
+                .padding(.vertical, 10)
+                .background(ButtonFillColor)
+                .foregroundColor(.white)
+                .cornerRadius(8)
             }
             .padding()
-            .background(Color.white.opacity(0.8))
+            .background(AppBackgroundColor)
             .cornerRadius(12)
 
             // Middle section: background image
@@ -114,6 +127,10 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
+        .background(
+            AppBackgroundColor
+            .ignoresSafeArea()
+        )
         #endif
     }
     
@@ -127,6 +144,7 @@ struct ContentView: View {
         let testURL = MainBundleHelper.getFileUrl(filename: "GeoClassifierEvaluationData", ext: "json")
         var modelURL = MainBundleHelper.getFileUrl(filename: "GeoClassifier", ext: "onnx")
 
+        mprinter(msg:"")
         classifier = CppClassifierWrapper()
 
         if let testURL = testURL, let modelURL = modelURL {

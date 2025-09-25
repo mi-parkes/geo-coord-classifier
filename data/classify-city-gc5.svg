@@ -12,17 +12,17 @@
 <text xml:space="preserve" text-anchor="middle" x="958" y="-842.8" font-family="Helvetica,sans-Serif" font-size="36.00">Workflow</text>
 <g id="clust1" class="cluster">
 <title>cluster_model</title>
-<path fill="DarkGray" stroke="LightGray" d="M20,-232C20,-232 534,-232 534,-232 540,-232 546,-238 546,-244 546,-244 546,-816.25 546,-816.25 546,-822.25 540,-828.25 534,-828.25 534,-828.25 20,-828.25 20,-828.25 14,-828.25 8,-822.25 8,-816.25 8,-816.25 8,-244 8,-244 8,-238 14,-232 20,-232"/>
+<path fill="LawnGreen" stroke="LightGray" d="M20,-232C20,-232 534,-232 534,-232 540,-232 546,-238 546,-244 546,-244 546,-816.25 546,-816.25 546,-822.25 540,-828.25 534,-828.25 534,-828.25 20,-828.25 20,-828.25 14,-828.25 8,-822.25 8,-816.25 8,-816.25 8,-244 8,-244 8,-238 14,-232 20,-232"/>
 <text xml:space="preserve" text-anchor="middle" x="277" y="-790.05" font-family="Helvetica,sans-Serif" font-size="36.00">Model Workflow</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_app</title>
-<path fill="DarkGray" stroke="LightGray" d="M566,-8C566,-8 1080,-8 1080,-8 1086,-8 1092,-14 1092,-20 1092,-20 1092,-607 1092,-607 1092,-613 1086,-619 1080,-619 1080,-619 566,-619 566,-619 560,-619 554,-613 554,-607 554,-607 554,-20 554,-20 554,-14 560,-8 566,-8"/>
+<path fill="LawnGreen" stroke="LightGray" d="M566,-8C566,-8 1080,-8 1080,-8 1086,-8 1092,-14 1092,-20 1092,-20 1092,-607 1092,-607 1092,-613 1086,-619 1080,-619 1080,-619 566,-619 566,-619 560,-619 554,-613 554,-607 554,-607 554,-20 554,-20 554,-14 560,-8 566,-8"/>
 <text xml:space="preserve" text-anchor="middle" x="823" y="-580.8" font-family="Helvetica,sans-Serif" font-size="36.00">Swift Application Architecture</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_platforms</title>
-<path fill="DarkGray" stroke="LightGray" d="M1112,-232C1112,-232 1896,-232 1896,-232 1902,-232 1908,-238 1908,-244 1908,-244 1908,-352.75 1908,-352.75 1908,-358.75 1902,-364.75 1896,-364.75 1896,-364.75 1112,-364.75 1112,-364.75 1106,-364.75 1100,-358.75 1100,-352.75 1100,-352.75 1100,-244 1100,-244 1100,-238 1106,-232 1112,-232"/>
+<path fill="LawnGreen" stroke="LightGray" d="M1112,-232C1112,-232 1896,-232 1896,-232 1902,-232 1908,-238 1908,-244 1908,-244 1908,-352.75 1908,-352.75 1908,-358.75 1902,-364.75 1896,-364.75 1896,-364.75 1112,-364.75 1112,-364.75 1106,-364.75 1100,-358.75 1100,-352.75 1100,-352.75 1100,-244 1100,-244 1100,-238 1106,-232 1112,-232"/>
 <text xml:space="preserve" text-anchor="middle" x="1504" y="-326.55" font-family="Helvetica,sans-Serif" font-size="36.00">Multi&#45;Platform Support</text>
 </g>
 <!-- pytorch -->
