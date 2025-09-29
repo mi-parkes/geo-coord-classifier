@@ -63,6 +63,7 @@ struct ContentView: View {
                     VStack {
                         Text(gmsg)
                             .padding()
+                            .foregroundColor(.black)
                     }
                 }
                 .frame(
@@ -123,6 +124,7 @@ struct ContentView: View {
             ScrollView {
                 Text(gmsg)
                     .padding()
+                    .foregroundColor(.black)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

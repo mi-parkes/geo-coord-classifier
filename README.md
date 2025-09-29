@@ -48,6 +48,12 @@ The core purpose of this project lies in the deployment process, not the complex
 
 ### Building the Project
 
+<p align="center">
+Xcode Project Build Dependency Graph
+<br><br>
+<img src="data/dg.svg" alt="something went wrong" style="max-width:320px">
+</p>
+
 This project supports building a Swift-based App or CLI from the command line using `xcodebuild`. The project expects the **`onnxruntime.xcframework`** directory to be located in the root directory of this project and contain the following structure:
 
 ```txt
@@ -73,7 +79,6 @@ This project supports building a Swift-based App or CLI from the command line us
 │       └── libonnxruntime.1.23.0.dylib
 └── ...
 ```
-
 #### Building from Command Line 🛠️
 
 ```bash
@@ -118,5 +123,5 @@ gmake run-app-in-ios-simulator
 <p align="center">
 iOS Simulator Screenshot
 <br><br>
-<img src="data/SimulatorScreenshotiPhoneAir.png" alt="something went wrong" style="width:480px;">
+<img src="data/SimulatorScreenshotiPhoneAir.png" alt="something went wrong" style="max-width:320px">
 </p>

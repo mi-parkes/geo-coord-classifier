@@ -1,4 +1,4 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
@@ -14,12 +14,20 @@ let package = Package(
         )
     ],
     targets: [
+        .binaryTarget(
+            name: "onnxruntime",
+            path: "../onnxruntime.xcframework"
+        ),
         .target(
             name: "classifierABC",
+            dependencies: [
+                .target(name: "onnxruntime")
+            ],
             path: "Sources/classifier",
             sources: ["ClassifierWrapper.cpp"],
             cxxSettings: [
                 .headerSearchPath("include"),
+            //    .unsafeFlags(["-arch", "arm64"], .when(platforms: [.macOS]))
             ]
         )
     ]

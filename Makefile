@@ -8,6 +8,8 @@ $(if $(findstring $(MINMAKEVERSION),$(firstword $(sort $(MINMAKEVERSION) $(MAKE_
 BUILD_CONFIGURATION = Debug
 ARCHS = arm64
 PROJECTDIR = geoCoordClassifier.xcodeproj
+XCODEBUILD = arch -arm64e xcodebuild
+UTILS ?= ../utils.mak
 
 .PHONY: clean help
 
@@ -21,20 +23,22 @@ help:
 	echo $(MAKE) run-macosx
 	echo $(MAKE) build-cli-macosx
 	echo $(MAKE) run-cli-macosx
+	echo $(MAKE) test-geoCoordClassifierCore
 	echo $(MAKE) build-ios-iphonesimulator
 	echo $(MAKE) start-simulator
 	echo $(MAKE) run-app-in-ios-simulator
 	echo $(MAKE) build-iphoneos
 
 targets:
-	xcodebuild -list -project $(PROJECTDIR)
+	$(XCODEBUILD) -list -project $(PROJECTDIR)
 
 sdks:
-	xcodebuild -showsdks
+	$(XCODEBUILD) -showsdks
 
 destinations:
-	xcodebuild  -project $(PROJECTDIR) -scheme geoCoordClassifier -showdestinations
-	xcodebuild  -project $(PROJECTDIR) -scheme geoCoordClassifierCLI -showdestinations
+	$(eval SCHEME=classifier)
+	$(XCODEBUILD)  -project $(PROJECTDIR) \
+		-scheme $(SCHEME) -showdestinations
 
 clean:
 	rm -rf DerivedData
@@ -43,8 +47,29 @@ clean:
 	rm -rf $(PROJECTDIR)/project.xcworkspace/xcuserdata
 	rm -rf classifier/.swiftpm
 
+build-classifier:
+	$(eval SCHEME=classifier)
+	$(XCODEBUILD) -project $(PROJECTDIR) \
+		$(if $(VERBOSE), -verbose,) \
+		-scheme $(SCHEME) \
+		-configuration $(BUILD_CONFIGURATION) \
+		-sdk macosx \
+		ARCHS=arm64 \
+		$(if $(SHOW), -showdestinations,) \
+		$(if $(CLEAN),clean,) build
+		build_request=$$(find Build/Intermediates.noindex/XCBuildData -type f -name build-request.json)
+		cat $$build_request
+
+show-classifier-build-settings:
+	$(eval SCHEME=classifier)
+	$(XCODEBUILD) -project $(PROJECTDIR) \
+		-scheme $(SCHEME) \
+		-configuration $(BUILD_CONFIGURATION) \
+		"ARCHS=$(ARCHS)" \
+		-showBuildSettings
+
 build-macosx:
-	xcodebuild -project $(PROJECTDIR) \
+	$(XCODEBUILD) -project $(PROJECTDIR) \
 		-scheme geoCoordClassifier \
 		-configuration $(BUILD_CONFIGURATION) \
 		"ARCHS=$(ARCHS)"
@@ -58,23 +83,23 @@ run-macosx:
 	$(if $(VERBOSE),--args -verbose,)
 
 build-cli-macosx:
-	xcodebuild $(if $(VERBOSE),-verbose,) \
+	$(XCODEBUILD) $(if $(VERBOSE),-verbose,) \
 		-project $(PROJECTDIR) \
 		-scheme geoCoordClassifierCLI \
 		-configuration $(BUILD_CONFIGURATION) \
 		"ARCHS=$(ARCHS)"
 
 run-cli-macosx:
-#	export DYLD_LIBRARY_PATH=$$DYLD_LIBRARY_PATH:.
 	find DerivedData/geoCoordClassifier/Build/Products -type f -name "libonnxruntime*.dylib"
 	cd DerivedData/geoCoordClassifier/Build/Products/$(BUILD_CONFIGURATION)/
 	./geoCoordClassifierCLI $(if $(VERBOSE),--verbose,)
 
 build-ios-iphonesimulator:
-	xcodebuild -project $(PROJECTDIR) \
+	$(XCODEBUILD) -project $(PROJECTDIR) \
 		-scheme geoCoordClassifier \
 		-configuration $(BUILD_CONFIGURATION) \
 		-sdk iphonesimulator \
+		-allowProvisioningUpdates \
 		"ARCHS=$(ARCHS)"
 
 #		"IPHONEOS_DEPLOYMENT_TARGET=25.0"
@@ -104,10 +129,11 @@ get-bundle-identifier:
 	defaults read $(CURDIR)/DerivedData/geoCoordClassifier/Build/Products/$(BUILD_CONFIGURATION)-iphonesimulator/geoCoordClassifier.app/Info CFBundleIdentifier
 
 build-iphoneos:
-	xcodebuild -project $(PROJECTDIR) \
+	$(XCODEBUILD) -project $(PROJECTDIR) \
 		-scheme geoCoordClassifier \
 		-configuration $(BUILD_CONFIGURATION) \
 		-sdk iphoneos \
+		-allowProvisioningUpdates \
     	-destination generic/platform=iOS \
 		"ARCHS=$(ARCHS)"
 
@@ -117,8 +143,26 @@ sandbox-test:
 	git clone https://github.com/mi-parkes/geo-coord-classifier.git
 	cd geo-coord-classifier
 	cp -r $(CURDIR)/onnxruntime.xcframework .
+	$(MAKE) build-classifier
 	$(MAKE) build-macosx
 	$(MAKE) build-ios-iphonesimulator
 	$(MAKE) build-iphoneos
+	$(MAKE) test-geoCoordClassifierCore
+	$(MAKE) run-cli-macosx
+	$(if $(RUNUI),$(MAKE) run-macosx,)
 
--include ../utils.mak
+test-geoCoordClassifierCore:
+	$(eval SCHEME=geoCoordClassifierCore)
+	$(eval TestBundlePath=/tmp/TestResults)
+	rm -rf $(TestBundlePath)*
+	$(XCODEBUILD) \
+		$(if $(VERBOSE), -verbose,) \
+		-project $(PROJECTDIR) \
+		-scheme $(SCHEME) \
+		-destination 'platform=macOS,arch=arm64' \
+		-resultBundlePath $(TestBundlePath) \
+		$(if $(SHOW), -showdestinations,) \
+		$(if $(CLEAN),clean,) test
+	$(if $(SHOW),open $(TestBundlePath).xcresult,)
+
+-include $(UTILS)
