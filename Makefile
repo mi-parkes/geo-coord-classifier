@@ -138,13 +138,16 @@ build-iphoneos:
 		"ARCHS=$(ARCHS)"
 
 sandbox-test:
+	$(eval BRANCH=main)
 	rm -rf /tmp/geo-coord-classifier
 	cd /tmp
-	git clone https://github.com/mi-parkes/geo-coord-classifier.git
+	git clone -b $(BRANCH) --single-branch \
+		https://github.com/mi-parkes/geo-coord-classifier.git
 	cd geo-coord-classifier
 	cp -r $(CURDIR)/onnxruntime.xcframework .
 	$(MAKE) build-classifier
 	$(MAKE) build-macosx
+	$(MAKE) build-cli-macosx
 	$(MAKE) build-ios-iphonesimulator
 	$(MAKE) build-iphoneos
 	$(MAKE) test-geoCoordClassifierCore

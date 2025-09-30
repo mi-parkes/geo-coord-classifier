@@ -12,7 +12,7 @@
 		BF56FCC52E7EE20A00D2F271 /* geoCoordClassifierCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF56FD252E7EF9CB00D2F271 /* geoCoordClassifierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; };
 		BF56FD262E7EF9CB00D2F271 /* geoCoordClassifierCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF56FD5F2E7F069800D2F271 /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF56FD5E2E7F069800D2F271 /* classifier */; };
+		BF56FD5F2E7F069800D2F271 /* classifier in Frameworks */ = {isa = PBXBuildFile; productRef = BF56FD632E7F077B00D2F271 /* classifier */; };
 		BF56FD602E7F069800D2F271 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */; };
 		BF56FD662E7F0AEA00D2F271 /* onnxruntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */; };
 		BF56FD672E7F0AFD00D2F271 /* onnxruntime.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF0855642E7EC4F100D3B610 /* onnxruntime.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -378,14 +378,13 @@
 			buildRules = (
 			);
 			dependencies = (
-				BF56FD642E7F077B00D2F271 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				BF08553F2E7EC44400D3B610 /* geoCoordClassifierCore */,
 			);
 			name = geoCoordClassifierCore;
 			packageProductDependencies = (
-				BF56FD5E2E7F069800D2F271 /* classifier */,
+				BF56FD632E7F077B00D2F271 /* classifier */,
 			);
 			productName = geoCoordClassifierCore;
 			productReference = BF08553E2E7EC44400D3B610 /* geoCoordClassifierCore.framework */;
@@ -612,10 +611,6 @@
 			isa = PBXTargetDependency;
 			target = BF08553D2E7EC44400D3B610 /* geoCoordClassifierCore */;
 			targetProxy = BF56FD272E7EF9CB00D2F271 /* PBXContainerItemProxy */;
-		};
-		BF56FD642E7F077B00D2F271 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = BF56FD632E7F077B00D2F271 /* classifier */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1202,10 +1197,6 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BF56FD5E2E7F069800D2F271 /* classifier */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = classifier;
-		};
 		BF56FD632E7F077B00D2F271 /* classifier */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF56FD582E7F05F100D2F271 /* XCLocalSwiftPackageReference "classifier" */;
