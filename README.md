@@ -51,7 +51,7 @@ The core purpose of this project lies in the deployment process, not the complex
 <p align="center">
 Xcode Project Build Dependency Graph
 <br><br>
-<img src="data/dg.svg" alt="something went wrong" style="max-width:320px">
+<img src="data/dg.svg" alt="something went wrong" style="max-width:600px">
 </p>
 
 This project supports building a Swift-based App or CLI from the command line using `xcodebuild`. The project expects the **`onnxruntime.xcframework`** directory to be located in the root directory of this project and contain the following structure:
