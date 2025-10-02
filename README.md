@@ -34,6 +34,16 @@ The core purpose of this project lies in the deployment process, not the complex
 
 -----
 
+### Project Technical Roadmap
+
+This project covers a wide array of specialized topics, demonstrating a complete journey through modern **MLOps, Cross-Platform Deployment, and Native Application Engineering.** The mindmap below visualizes the key technical areas and skills mastered, from PyTorch model optimization to terminal-driven CI/CD processes.
+
+<p align="center">
+  <img src="data/GeoClassifier_MLOps_Topics.svg" alt="Mindmap showing the end-to-end topics and technologies covered in the Geo Coordinate Classifier project, including MLOps, Core ML, ONNX, Swift/C++ Interoperability, and CI/CD." style="width: 100%; max-width: 900px;">
+</p>
+
+-----
+
 ### Dependencies
 
 * **ONNX Runtime:** The core library required for loading and running the ONNX model.
@@ -114,8 +124,8 @@ make run-cli-macosx
 #### Run App (ios-simulator)
 
 ```bash
-gmake start-simulator
-gmake run-app-in-ios-simulator
+make start-simulator
+make run-app-in-ios-simulator
 ```
 
 -----
@@ -123,5 +133,28 @@ gmake run-app-in-ios-simulator
 <p align="center">
 iOS Simulator Screenshot
 <br><br>
-<img src="data/SimulatorScreenshotiPhoneAir.png" alt="something went wrong" style="max-width:320px">
+<img src="data/SimulatorScreenshotiPhoneAir.png" 
+    alt="something went wrong" width="320" style="max-width:320px">
 </p>
+
+-----
+
+### Testing the Project (Continuous Integration)
+
+These commands are designed for running validation steps locally and are suitable for use in **Continuous Integration (CI/CD)** pipelines (e.g., GitHub Actions, Jenkins).
+
+#### Unit Test Execution (macOS)
+
+Runs the core unit tests for the `GeoCoordClassifierCore` target, validating the C++ bridge, model loading, and `ClassifierProtocol` implementations in Swift.
+
+```bash
+make test-geoCoordClassifierCore
+```
+
+#### Integration Test (macOS CLI)
+
+Performs a full end-to-end validation. It runs the CLI against the `GeoClassifierEvaluationData.json` file to confirm that both the ONNX and Core ML backends execute correctly and return consistent classification results.
+
+```bash
+make sandbox-test
+```
