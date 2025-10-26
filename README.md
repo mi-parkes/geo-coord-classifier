@@ -4,7 +4,7 @@ This project is a **[Swift](https://www.swift.org/documentation/)-based** applic
 
 The classifier's actual function—determining a region from coordinates—is a **minimal, illustrative task** used to rigorously test the complex deployment workflow, not to solve a challenging geographic problem.
 
-![](data/classify-city-gc7.svg)
+![](data/classify-city-gc8.svg)
 
 -----
 
